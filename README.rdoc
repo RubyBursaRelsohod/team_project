@@ -6,17 +6,17 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-2.2.2
+<tt>2.2.2</tt>
 * System dependencies
-rails 4.2.3
+<tt>rails 4.2.3</tt>
 * Configuration
 
 * Database creation
-rake db:creaate
+<tt>rake db:create</tt>
 * Database initialization
-rake db:migrate
+<tt>rake db:migrate</tt>
 * How to run the test suite
-rspec spec
+<tt>rspec spec</tt>
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
