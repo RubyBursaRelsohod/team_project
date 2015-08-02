@@ -1,4 +1,4 @@
-## README
+## README [![Circle CI](https://circleci.com/gh/RubyBursaRelsohod/team_project.svg?style=svg)](https://circleci.com/gh/RubyBursaRelsohod/team_project) [![Code Climate](https://codeclimate.com/github/RubyBursaRelsohod/team_project/badges/gpa.svg)](https://codeclimate.com/github/RubyBursaRelsohod/team_project) [![Test Coverage](https://codeclimate.com/github/RubyBursaRelsohod/team_project/badges/coverage.svg)](https://codeclimate.com/github/RubyBursaRelsohod/team_project/coverage)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
