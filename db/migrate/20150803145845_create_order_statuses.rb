@@ -1,3 +1,4 @@
+# OrderStatus migration
 class CreateOrderStatuses < ActiveRecord::Migration
   def change
     create_table :order_statuses do |t|

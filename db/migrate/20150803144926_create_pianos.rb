@@ -1,3 +1,4 @@
+# Pianos migration
 class CreatePianos < ActiveRecord::Migration
   def change
     create_table :pianos do |t|
