@@ -1,9 +1,35 @@
 # encoding: UTF-8
-
-# Current db schema
-ActiveRecord::Schema.define(version: 201_508_031_458_45) do
+ActiveRecord::Schema.define(version: 20150803151703) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
+
+  create_table "guitars", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "frets"
+    t.integer  "chords"
+    t.string   "dimentions"
+    t.integer  "weight"
+    t.boolean  "is_digital"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "category_id"
+    t.float    "price"
+    t.string   "country"
+    t.string   "company"
+    t.integer  "quantity"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "products_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table 'order_statuses', force: :cascade do |t|
     t.string 'name'
