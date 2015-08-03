@@ -23,8 +23,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Heroku gem
-gem 'rails_12factor'
+# Heroku deployment gem
+group :production do
+  gem 'rails_12factor'
+end
 
 # gem 'simple_form'
 # gem 'devise', '~> 3.5.1'
@@ -53,5 +55,4 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'spring'
-  gem 'rails_12factor'
 end
