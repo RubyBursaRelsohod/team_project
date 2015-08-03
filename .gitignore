@@ -13,3 +13,25 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore the default SQLite database.
+db/*.sqlite3
+
+.xrayconfig
+
+# Ignore local database settings
+.idea/*
+*.swp
+*~
+.project
+
+# Ignore ctags and etags files
+.gemtags
+.tags
+.tags_sorted_by_file
+
+# Ignore redis server files
+dump.rdb
+
+# Ignore local vagrant settings
+.vagrant
