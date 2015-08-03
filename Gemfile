@@ -53,4 +53,5 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'spring'
+  gem 'rails_12factor'
 end
