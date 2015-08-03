@@ -60,7 +60,7 @@ deployment:
     owner: yakovenkodenis
     branch: development
     heroku:
-      appname: amazing-timetracker
+      appname: relsohod
 
 ## Custom notifications
 # notify:
