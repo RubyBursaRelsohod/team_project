@@ -60,7 +60,8 @@ deployment:
   staging:
     owner: yakovenkodenis
     branch: master # heroku branch?
-    heroku:
-      appname: relsohod
+    # heroku:
+    #   appname: relsohod
     commands:
       - git push -f heroku development:master
+      - heroku run rake db:migrate
