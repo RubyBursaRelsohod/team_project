@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804132448) do
+ActiveRecord::Schema.define(version: 20150804145535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,11 +46,14 @@ ActiveRecord::Schema.define(version: 20150804132448) do
     t.datetime "creation_date"
     t.string   "payment_type"
     t.boolean  "delivery_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "user_id"
     t.integer  "status_id"
+    t.integer  "order_status_id"
   end
+
+  add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
 
   create_table "pianos", force: :cascade do |t|
     t.string   "color"
@@ -104,4 +107,5 @@ ActiveRecord::Schema.define(version: 20150804132448) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "orders", "order_statuses"
 end
