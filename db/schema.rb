@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804145535) do
+ActiveRecord::Schema.define(version: 20150804155150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,12 +48,20 @@ ActiveRecord::Schema.define(version: 20150804145535) do
     t.boolean  "delivery_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "user_id"
-    t.integer  "status_id"
     t.integer  "order_status_id"
+    t.integer  "users_id"
   end
 
   add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
+  add_index "orders", ["users_id"], name: "index_orders_on_users_id", using: :btree
+
+  create_table "orders_products", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pianos", force: :cascade do |t|
     t.string   "color"
@@ -63,8 +71,10 @@ ActiveRecord::Schema.define(version: 20150804145535) do
     t.boolean  "is_digital"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "product_id"
+    t.integer  "products_id"
   end
+
+  add_index "pianos", ["products_id"], name: "index_pianos_on_products_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -105,6 +115,18 @@ ActiveRecord::Schema.define(version: 20150804145535) do
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "violins", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "weight"
+    t.string   "body_material"
+    t.string   "size"
+    t.integer  "string_count"
+    t.boolean  "bow_included"
+    t.string   "color"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_foreign_key "orders", "order_statuses"
