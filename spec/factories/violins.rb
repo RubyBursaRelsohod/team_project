@@ -8,5 +8,4 @@ FactoryGirl.define do
     bow_included false
     color "MyString"
   end
-
 end
