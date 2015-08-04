@@ -59,6 +59,6 @@ test:
 deployment:
   staging:
     owner: yakovenkodenis
-    branch: development
+    branch: master
     heroku:
       appname: relsohod
