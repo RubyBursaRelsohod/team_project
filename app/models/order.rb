@@ -1,5 +1,5 @@
 # Order model
 class Order < ActiveRecord::Base
-  has_one :order_status
+  has_many :order_statuses
   belongs_to :user
 end
