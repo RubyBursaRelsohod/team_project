@@ -141,9 +141,8 @@ ActiveRecord::Schema.define(version: 20150805094637) do
 
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
-  add_foreign_key "orders", "order_statuses"
-  add_foreign_key "saxophones", "products"
   add_foreign_key "guitars", "products"
   add_foreign_key "orders", "order_statuses"
   add_foreign_key "products", "products_categories"
+  add_foreign_key "saxophones", "products"
 end
