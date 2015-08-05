@@ -25,12 +25,14 @@ checkout:
     - git submodule sync
     - git submodule update --init # use submodules
 
-## Customize dependencies
-# dependencies:
-#   pre:
-#     - npm install coffeescript # install from a different package manager
-#     - gem uninstall bundler # use a custom version of bundler
-#     - gem install bundler --pre
+# Customize dependencies
+dependencies:
+  post:
+    - bundle exec rake assets:precompile
+  # pre:
+  #   - npm install coffeescript # install from a different package manager
+  #   - gem uninstall bundler # use a custom version of bundler
+  #   - gem install bundler --pre
 
   override:
     - bundle install: # note ':' here
@@ -60,5 +62,8 @@ deployment:
   staging:
     owner: yakovenkodenis
     branch: development
-    heroku:
-      appname: relsohod
+    commands:
+      - git push heroku development:master
+      - heroku run rake db:migrate
+    # heroku:
+    #   appname: relsohod
