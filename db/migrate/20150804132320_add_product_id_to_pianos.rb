@@ -1,5 +1,5 @@
 class AddProductIdToPianos < ActiveRecord::Migration
   def change
-    add_column :pianos, :product_id, :integer
+    # add_column :pianos, :product_id, :integer
   end
 end

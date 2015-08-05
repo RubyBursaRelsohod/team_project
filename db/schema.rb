@@ -54,11 +54,11 @@ ActiveRecord::Schema.define(version: 20150805113810) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "order_status_id"
-    t.integer  "users_id"
+    t.integer  "user_id"
   end
 
   add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
-  add_index "orders", ["users_id"], name: "index_orders_on_users_id", using: :btree
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "orders_products", force: :cascade do |t|
     t.integer  "order_id"
@@ -76,10 +76,10 @@ ActiveRecord::Schema.define(version: 20150805113810) do
     t.boolean  "is_digital"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "products_id"
+    t.integer  "product_id"
   end
 
-  add_index "pianos", ["products_id"], name: "index_pianos_on_products_id", using: :btree
+  add_index "pianos", ["product_id"], name: "index_pianos_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -143,6 +143,8 @@ ActiveRecord::Schema.define(version: 20150805113810) do
   add_foreign_key "comments", "users"
   add_foreign_key "guitars", "products"
   add_foreign_key "orders", "order_statuses"
+  add_foreign_key "orders", "users"
+  add_foreign_key "pianos", "products"
   add_foreign_key "products", "products_categories"
   add_foreign_key "saxophones", "products"
 end
