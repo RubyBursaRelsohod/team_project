@@ -17,12 +17,15 @@ ActiveRecord::Schema.define(version: 20150805094637) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "product_id"
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "product_id"
   end
+
+  add_index "comments", ["product_id"], name: "index_comments_on_product_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "guitars", force: :cascade do |t|
     t.integer  "frets"
@@ -108,7 +111,10 @@ ActiveRecord::Schema.define(version: 20150805094637) do
     t.string   "body_material"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "product_id"
   end
+
+  add_index "saxophones", ["product_id"], name: "index_saxophones_on_product_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -133,7 +139,10 @@ ActiveRecord::Schema.define(version: 20150805094637) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "comments", "products"
+  add_foreign_key "comments", "users"
   add_foreign_key "guitars", "products"
   add_foreign_key "orders", "order_statuses"
   add_foreign_key "products", "products_categories"
+  add_foreign_key "saxophones", "products"
 end
