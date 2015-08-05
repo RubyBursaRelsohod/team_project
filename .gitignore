@@ -13,6 +13,7 @@
 /log/*
 !/log/.keep
 /tmp
+*.pdf
 
 # Ignore the default SQLite database.
 db/*.sqlite3
