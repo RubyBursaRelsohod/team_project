@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804155150) do
+ActiveRecord::Schema.define(version: 20150805094637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20150804155150) do
   end
 
   create_table "guitars", force: :cascade do |t|
-    t.integer  "product_id"
     t.integer  "frets"
     t.integer  "chords"
     t.string   "dimentions"
@@ -33,7 +32,10 @@ ActiveRecord::Schema.define(version: 20150804155150) do
     t.boolean  "is_digital"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "product_id"
   end
+
+  add_index "guitars", ["product_id"], name: "index_guitars_on_product_id", using: :btree
 
   create_table "order_statuses", force: :cascade do |t|
     t.string   "name"
@@ -78,14 +80,16 @@ ActiveRecord::Schema.define(version: 20150804155150) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.integer  "category_id"
     t.float    "price"
     t.string   "country"
     t.string   "company"
     t.integer  "quantity"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "products_category_id"
   end
+
+  add_index "products", ["products_category_id"], name: "index_products_on_products_category_id", using: :btree
 
   create_table "products_categories", force: :cascade do |t|
     t.string   "name"
@@ -129,5 +133,7 @@ ActiveRecord::Schema.define(version: 20150804155150) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "guitars", "products"
   add_foreign_key "orders", "order_statuses"
+  add_foreign_key "products", "products_categories"
 end
