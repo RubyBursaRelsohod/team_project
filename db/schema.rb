@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805113810) do
+ActiveRecord::Schema.define(version: 20150805134217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,11 +62,13 @@ ActiveRecord::Schema.define(version: 20150805113810) do
 
   create_table "orders_products", force: :cascade do |t|
     t.integer  "order_id"
-    t.integer  "product_id"
     t.integer  "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "product_id"
   end
+
+  add_index "orders_products", ["product_id"], name: "index_orders_products_on_product_id", using: :btree
 
   create_table "pianos", force: :cascade do |t|
     t.string   "color"
@@ -144,6 +146,7 @@ ActiveRecord::Schema.define(version: 20150805113810) do
   add_foreign_key "guitars", "products"
   add_foreign_key "orders", "order_statuses"
   add_foreign_key "orders", "users"
+  add_foreign_key "orders_products", "products"
   add_foreign_key "pianos", "products"
   add_foreign_key "products", "products_categories"
   add_foreign_key "saxophones", "products"
