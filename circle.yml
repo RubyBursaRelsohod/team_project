@@ -60,7 +60,6 @@ test:
 ## Customize deployment commands
 deployment:
   staging:
-    owner: yakovenkodenis
     branch: development
     heroku:
       appname: relsohod
