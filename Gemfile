@@ -28,8 +28,9 @@ group :production do
   gem 'rails_12factor'
 end
 
-# gem 'simple_form'
-# gem 'devise', '~> 3.5.1'
+gem 'simple_form'
+gem 'devise', '~> 3.5.1'
+gem 'activeadmin', github: 'activeadmin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -51,6 +52,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'letter_opener'
   gem 'email_spec'
+  gem 'mailcatcher'
   gem 'web-console', '~> 2.0'
   gem 'byebug'
   gem 'pry'
