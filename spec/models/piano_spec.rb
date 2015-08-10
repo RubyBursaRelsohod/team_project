@@ -8,8 +8,8 @@ RSpec.describe Piano, type: :model do
 
     it { should validate_numericality_of :keys_number }
 
-    it { should allow_value('green').for(:color) }
-    it { should_not allow_value('52').for(:color) }
+    it { should allow_value("green").for(:color) }
+    it { should_not allow_value("52").for(:color) }
   end
 
   describe "associations" do
