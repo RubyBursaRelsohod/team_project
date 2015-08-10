@@ -38,6 +38,8 @@ gem 'activeadmin', github: 'activeadmin'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'codeclimate-test-reporter', group: :test, require: nil
+
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
