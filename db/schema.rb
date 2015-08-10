@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150810145603) do
   create_table "guitars", force: :cascade do |t|
     t.integer  "frets"
     t.integer  "chords"
-    t.string   "dimentions"
+    t.float    "dimensions"
     t.integer  "weight"
     t.boolean  "is_digital"
     t.datetime "created_at", null: false
