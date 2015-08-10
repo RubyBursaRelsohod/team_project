@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20150810145603) do
     t.datetime "delivery_date"
     t.datetime "creation_date"
     t.string   "payment_type"
-    t.boolean  "delivery_type"
+    t.string   "delivery_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "order_status_id"
