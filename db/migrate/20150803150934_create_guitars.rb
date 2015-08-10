@@ -3,9 +3,9 @@ class CreateGuitars < ActiveRecord::Migration
     create_table :guitars do |t|
       t.integer :product_id
       t.integer :frets
-      t.integer :chords
-      t.string :dimentions
-      t.integer :weight
+      t.integer :chords         
+      t.float :dimensions       #102 cm
+      t.integer :weight         
       t.boolean :is_digital
 
       t.timestamps null: false

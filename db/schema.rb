@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150810145603) do
   create_table "guitars", force: :cascade do |t|
     t.integer  "frets"
     t.integer  "chords"
-    t.string   "dimentions"
+    t.float    "dimensions"
     t.integer  "weight"
     t.boolean  "is_digital"
     t.datetime "created_at", null: false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20150810145603) do
     t.datetime "delivery_date"
     t.datetime "creation_date"
     t.string   "payment_type"
-    t.boolean  "delivery_type"
+    t.string   "delivery_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "order_status_id"
