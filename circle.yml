@@ -55,6 +55,7 @@ database:
 ## Customize test commands
 test:
   override:
+    - CODECLIMATE_REPO_TOKEN=3ceed0d735d5f0605540af8f491b56d546d47b102a1fd98dbc282be37ec76c89 bundle exec rake
     - rspec spec
 
 ## Customize deployment commands
