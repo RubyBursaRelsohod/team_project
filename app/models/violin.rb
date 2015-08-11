@@ -8,5 +8,5 @@ class Violin < ActiveRecord::Base
    validates :string_count, presence: true, numericality: { greater_than: 0, only_integer: true }
    validates :bow_included, presence: true, inclusion: { in: [true, false] }
    validates :color, presence: true, length: { minimum: 3 }
-   validates :product_id, presence: true, numericality: {only_integer: true }, uniqueness: true
+   validates :product_id, presence: true, numericality: { only_integer: true }, uniqueness: true
 end
