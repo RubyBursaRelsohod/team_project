@@ -1,8 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Product, type: :model do
-
-  describe 'validations' do
+  describe "validations" do
     it { should validate_presence_of :name }
     it { should validate_presence_of :products_category_id }
     it { should validate_presence_of :quantity }
@@ -14,7 +13,7 @@ RSpec.describe Product, type: :model do
     it { should_not allow_value("text").for(:price) }
   end
 
-  describe 'associations' do
+  describe "associations" do
     it { should have_many :comments }
     it { should have_many :orders_products }
     it { should belong_to :products_category }
