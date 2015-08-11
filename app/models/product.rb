@@ -6,4 +6,14 @@ class Product < ActiveRecord::Base
   belongs_to :products_category
   has_many :orders_products
   has_one :violin
+
+  validates_associated :comments, :orders_products
+  validates :products_category_id, presence: true,
+                                   numericality: { greater_than: 0,
+                                                   only_integer: true }
+  validates :quantity, presence: true,
+                       numericality: { greater_than_or_equal_to: 0,
+                                       only_integer: true }
+  validates :name, presence: true
+  validates :price, presence: true, numericality: true
 end
