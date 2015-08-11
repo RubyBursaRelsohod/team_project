@@ -1,6 +1,5 @@
 ActiveAdmin.register Guitar do
-  permit_params 
-    :frets,
+  permit_params :frets,
     :chords,
     :dimensions,
     :weight,

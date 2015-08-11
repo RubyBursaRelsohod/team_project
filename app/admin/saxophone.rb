@@ -1,6 +1,5 @@
 ActiveAdmin.register Saxophone do
-  permit_params
-    :type,
+  permit_params :type,
     :tonality,
     :keys_number,
     :low_key,
