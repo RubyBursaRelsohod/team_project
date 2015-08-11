@@ -13,8 +13,10 @@ RSpec.describe Saxophone, type: :model do
     it { should validate_numericality_of :bell_diametr }
 
     it { should allow_value("10.11").for(:bell_diametr) }
+    it { should allow_value(21.55).for(:bell_diametr) }
     it { should_not allow_value("green").for(:bell_diametr) }
     it { should_not allow_value("10.11").for(:product_id) }
+    it { should_not allow_value(18.5).for(:product_id) }
   end
 
   describe "associations" do

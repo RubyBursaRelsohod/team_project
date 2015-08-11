@@ -6,11 +6,18 @@ RSpec.describe Product, type: :model do
     it { should validate_presence_of :products_category_id }
     it { should validate_presence_of :quantity }
     it { should allow_value("2").for(:products_category_id) }
+    it { should allow_value(2).for(:products_category_id) }
+    it { should validate_numericality_of :products_category_id }
     it { should_not allow_value("text").for(:products_category_id) }
-    it { should allow_value("0").for(:quantity) }
+    it { should allow_value("0").for(:quantity) } 
+    it { should allow_value(2).for(:quantity) }
+    it { should validate_numericality_of :quantity }
     it { should_not allow_value("text").for(:quantity) }
     it { should allow_value("10.11").for(:price) }
+    it { should allow_value(50.25).for(:price) }
+    it { should validate_numericality_of :price }
     it { should_not allow_value("text").for(:price) }
+    it { should_not allow_value(10.1234).for(:price) }
   end
 
   describe "associations" do

@@ -15,10 +15,8 @@ RSpec.describe Violin, type: :model do
     it { should validate_numericality_of :product_id }
 
     it { should allow_value("brown").for(:color) }
-    it { should allow_value("7/8").for(:size)}
+    it { should allow_value("7/8").for(:size) }
 
-    it { should_not allow_value(11).for(:bow_included)}
-    it { should_not allow_value("aa").for(:bow_included)}
     it { should_not allow_value("bbb").for(:string_count) }
     it { should_not allow_value("cccaa").for(:weight) }
   end
