@@ -11,6 +11,7 @@ RSpec.describe Saxophone, type: :model do
     it { should validate_presence_of :high_key }
 
     it { should validate_numericality_of :product_id }
+    it { should validate_numericality_of :bell_diametr }
 
     it { should allow_value("10.11").for(:bell_diametr) }
     it { should_not allow_value("green").for(:bell_diametr) }
