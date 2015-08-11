@@ -13,6 +13,7 @@ RSpec.describe User, type: :model do
     it { should allow_value("Smith").for(:last_name) }
     it { should_not allow_value("sMith").for(:last_name) }
     it { should allow_value("JS@example.com").for(:email) }
+    it { should_not allow_value("example.com").for(:email) }
   end
   describe "associations" do
     it { should have_many :comments }
