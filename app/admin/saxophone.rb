@@ -1,5 +1,4 @@
 ActiveAdmin.register Saxophone do
-
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -12,9 +11,6 @@ ActiveAdmin.register Saxophone do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-
   permit_params :type, :tonality, :keys_number, :low_key, :high_key, :bell_diametr, 
                 :bell_engraved, :body_material, :created_at, :updated_at, :product_id
-
-
 end
