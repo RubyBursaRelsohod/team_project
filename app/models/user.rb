@@ -8,10 +8,10 @@ class User < ActiveRecord::Base
   end
 
   validates :password, presence: true, length: { minimum: 3 }
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true,
+                    format: {
+                      with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+                    }
   validates :phone, presence: true
   validates :address, presence: true
-
-  validates_format_of :email,
-                      with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 end

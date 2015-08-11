@@ -9,7 +9,7 @@ RSpec.describe Product, type: :model do
     it { should allow_value(2).for(:products_category_id) }
     it { should validate_numericality_of :products_category_id }
     it { should_not allow_value("text").for(:products_category_id) }
-    it { should allow_value("0").for(:quantity) } 
+    it { should allow_value("0").for(:quantity) }
     it { should allow_value(2).for(:quantity) }
     it { should validate_numericality_of :quantity }
     it { should_not allow_value("text").for(:quantity) }
