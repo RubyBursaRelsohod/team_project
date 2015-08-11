@@ -29,5 +29,38 @@ ActiveAdmin.register_page "Dashboard" do
     #     end
     #   end
     # end
+
+    columns do
+      column do
+        panel 'Guitars' do
+          ul do
+            Guitar.all[0,3].map do |m|
+              li link_to(m.product.name, admin_guitar_path(m))
+            end            
+          end
+        end
+      end
+
+      column do
+        panel 'Pianos' do
+          ul do
+            Piano.all[0,3].map do |m|
+              li link_to(m.product.name, admin_piano_path(m))
+            end            
+          end
+        end
+      end
+
+      column do
+        panel 'Saxophones' do
+          ul do
+            Saxophone.all[0,3].map do |m|
+              li link_to(m.product.name, admin_saxophone_path(m))
+            end            
+          end
+        end
+      end
+
+    end
   end # content
 end
