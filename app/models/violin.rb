@@ -1,7 +1,7 @@
 class Violin < ActiveRecord::Base
   belongs_to :product
 
-  validates :weight, presence: true, numericality: { greater_than: 0,                                                 only_integer: true }
+  validates :weight, presence: true, numericality: { greater_than: 0, only_integer: true }
 
    validates :body_material, presence: true
    validates :size, presence: true
