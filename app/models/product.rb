@@ -9,10 +9,11 @@ class Product < ActiveRecord::Base
 
   validates_associated :comments, :orders_products
   validates :products_category_id, presence: true,
-            numericality: { greater_than: 0, only_integer: true }
+                                   numericality: { greater_than: 0,
+                                                   only_integer: true }
   validates :quantity, presence: true,
-            numericality: { greater_than_or_equal_to: 0, only_integer: true }
+                       numericality: { greater_than_or_equal_to: 0,
+                                       only_integer: true }
   validates :name, presence: true
-  validates :price, presence: true
-  validates_numericality_of :price
+  validates :price, presence: true, numericality: true
 end
