@@ -11,6 +11,6 @@ ActiveAdmin.register User do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-  permit_params :first_name, :last_name, :password, :email, :phone, :address, 
-                :created_at, :updated_at
+  permit_params :first_name, :last_name, :password, :email, :phone, :address,
+  :created_at, :updated_at
 end

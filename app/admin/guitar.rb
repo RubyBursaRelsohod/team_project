@@ -1,5 +1,4 @@
 ActiveAdmin.register Guitar do
-
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -12,8 +11,6 @@ ActiveAdmin.register Guitar do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-
- permit_params :frets, :chords, :dimensions, :weight, 
-               :is_digital, :created_at, :updated_at, :product_id
-
+  permit_params :frets, :chords, :dimensions, :weight, 
+  :is_digital, :created_at, :updated_at, :product_id
 end
