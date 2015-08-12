@@ -88,14 +88,15 @@ Rails.application.configure do
 
   # Config Devise mailing host for production
   config.action_mailer.default_url_options = { host: "relsohod.herokuapp.com" }
-  config.action_mailer.delivery_method :smtp
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
 
   config.action_mailer.smtp_settings = {
       openssl_verify_mode: "none",
       tls: false,
       enable_starttls_auto: true,
       address: "smtp.gmail.com",
-      domain: "mail.google.com",
+      domain: "relsohod.herokuapp.com",
       port: 587,
       user_name: "relsohod@gmail.com",
       password: "RubyBursaRelsohod",
