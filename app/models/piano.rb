@@ -5,7 +5,7 @@ class Piano < ActiveRecord::Base
 
   # validations
   validates :color, presence: true,
-                            format: { with: /\A[^0-9]+\z/i }
+                    format: { with: /\A[^0-9]+\z/i }
   validates :keys_number, :product_id, presence: true,
                           numericality: { greater_than: 0,
                                           only_integer: true }
