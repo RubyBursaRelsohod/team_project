@@ -20,7 +20,7 @@ RSpec.describe Guitar, type: :model do
     it { should allow_value(49.5).for(:dimensions) }
     it { should allow_value(7).for(:weight) }
     it { should allow_value("true").for(:is_digital) }
-    it { should allow_value(2).for(:product_id) }  
+    it { should allow_value(2).for(:product_id) } 
   end
   describe "fail to .save" do
     it { should_not allow_value(0, -1, 2.2, "gyhvg").for(:frets) }
