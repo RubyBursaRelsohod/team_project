@@ -15,7 +15,7 @@ RSpec.describe Comment, type: :model do
   end
   describe "fail to .save" do
     it { should_not allow_value(0, -1, "dasd", 1.2).for(:user_id) }
-    it { should_not allow_value(0, -1, "dasd", 2.2).for(:product_id) } 
+    it { should_not allow_value(0, -1, "dasd", 2.2).for(:product_id) }
   end
   describe "associations" do
     it { should belong_to :user}

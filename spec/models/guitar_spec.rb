@@ -15,12 +15,12 @@ RSpec.describe Guitar, type: :model do
     it { should validate_numericality_of :dimensions }
   end
   describe ".save" do
-    it {should allow_value(22).for(:frets) }
-    it {should allow_value(6).for(:chords) }
-    it {should allow_value(49.5).for(:dimensions) }
-    it {should allow_value(7).for(:weight) }
-    it {should allow_value("true").for(:is_digital) }
-    it {should allow_value(2).for(:product_id) }  
+    it { should allow_value(22).for(:frets) }
+    it { should allow_value(6).for(:chords) }
+    it { should allow_value(49.5).for(:dimensions) }
+    it { should allow_value(7).for(:weight) }
+    it { should allow_value("true").for(:is_digital) }
+    it { should allow_value(2).for(:product_id) }  
   end
   describe "fail to .save" do
     it { should_not allow_value(0, -1, 2.2, "gyhvg").for(:frets) }
