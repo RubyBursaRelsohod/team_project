@@ -27,26 +27,25 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
     end # columns Row1
-
-  columns do
-    column do
-      panel "Saxophones" do
-        ul do
-          Saxophone.all[0, 3].map do |m|
-            li link_to(m.product.name, admin_saxophone_path(m))
+      columns do
+        column do
+          panel "Saxophones" do
+            ul do
+              Saxophone.all[0, 3].map do |m|
+                li link_to(m.product.name, admin_saxophone_path(m))
+              end
+            end
+          end
+        end
+      column do
+        panel "Violins" do
+          ul do
+            Violin.all[0, 3].map do |m|
+              li link_to(m.product.name, admin_violin_path(m))
+            end
           end
         end
       end
-    end
-    column do
-      panel "Violins" do
-        ul do
-          Violin.all[0, 3].map do |m|
-            li link_to(m.product.name, admin_violin_path(m))
-          end
-        end
-      end
-    end
-  end  #colums Row2
+    end  #colums Row2
   end # content
 end
