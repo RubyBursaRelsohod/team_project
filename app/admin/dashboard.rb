@@ -13,7 +13,7 @@ ActiveAdmin.register_page "Dashboard" do
           ul do
             Guitar.all[0, 3].map do |m|
               li link_to(m.product.name, admin_guitar_path(m))
-            end            
+            end
           end
         end
       end
@@ -22,19 +22,31 @@ ActiveAdmin.register_page "Dashboard" do
           ul do
             Piano.all[0, 3].map do |m|
               li link_to(m.product.name, admin_piano_path(m))
-            end            
+            end
           end
         end
       end
-      column do
-        panel "Saxophones" do
-          ul do
-            Saxophone.all[0, 3].map do |m|
-              li link_to(m.product.name, admin_saxophone_path(m))
-            end            
+    end # columns Row1
+
+  columns do
+    column do
+      panel "Saxophones" do
+        ul do
+          Saxophone.all[0, 3].map do |m|
+            li link_to(m.product.name, admin_saxophone_path(m))
           end
         end
       end
-    end # columns
+    end
+    column do
+      panel "Violins" do
+        ul do
+          Violin.all[0, 3].map do |m|
+            li link_to(m.product.name, admin_violin_path(m))
+          end
+        end
+      end
+    end
+  end  #colums Row2
   end # content
 end
