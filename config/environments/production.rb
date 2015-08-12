@@ -92,15 +92,15 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.smtp_settings = {
-      openssl_verify_mode: "none",
-      tls: false,
-      enable_starttls_auto: true,
-      address: "smtp.gmail.com",
-      domain: "relsohod.herokuapp.com",
-      port: 587,
-      user_name: "relsohod@gmail.com",
-      password: "RubyBursaRelsohod",
-      authentication: "login",
-      enable_starttls_auto: true
+    openssl_verify_mode: "none",
+    tls: false,
+    enable_starttls_auto: true,
+    address: "smtp.gmail.com",
+    domain: "mail.google.com",
+    port: 587,
+    user_name: "relsohod@gmail.com",
+    password: "RubyBursaRelsohod",
+    authentication: "login",
+    enable_starttls_auto: true
   }
 end
