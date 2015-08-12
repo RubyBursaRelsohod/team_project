@@ -5,5 +5,5 @@ class Guitar < ActiveRecord::Base
             { greater_than: 0, only_integer: true }
   validates :dimensions, presence: true, numericality: true
   validates :is_digital, presence: true 
-
+  validates_associated :product
 end
