@@ -41,6 +41,9 @@ module RubyBursaTeamProject
 
     ActionMailer::Base.smtp_settings = {
 
+        :openssl_verify_mode => "none",
+        :tls            => false,
+        :enable_starttls_auto => true,
         :address        => "smtp.gmail.com",
         :domain         => "mail.google.com",
         :port           => 587,
