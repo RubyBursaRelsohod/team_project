@@ -1,13 +1,26 @@
 <%= simple_form_for(resource, as: resource_name,
                               url: session_path(resource_name),
-                              html: { class: "form-signin" }) do |f| %>
+                              wrapper_mappings: { boolean: :vertical_boolean },
+                              html: { class: "form-signin well" }) do |f| %>
 	<h2 class="text-center">Log In</h2>
 
-    <%= f.input :email, placeholder: "Email", required: true, autofocus: true, label: false, input_html: { class: "form-control" } %>
-    <%= f.input :password, placeholder: "New password", required: true, label: false, input_html: { class: "form-control" } %>
+    <%= f.input :email, placeholder: "Email", required: true, autofocus: true, label: false do %>
+		<div class="input-group">
+	        <%= f.input_field :email, class: 'form-control input-lg', placeholder: 'Email' %>
+	        <span class="input-group-addon glyphicon glyphicon-user"></span>
+		</div>
+    <% end %>
+    <%= f.input :password, placeholder: "New password", required: true, label: false do %>
+      <div class="input-group">
+        <%= f.input_field :password, class: 'form-control input-lg', placeholder: 'Password' %>
+        <span class="input-group-addon glyphicon glyphicon-lock"></span>
+      </div>
+    <% end %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
     <%= f.button :submit, "Log in", class: "btn btn-primary btn-block" %>
 
 	<%= render "devise/shared/links" %>
 <% end %>
+</div>
+
