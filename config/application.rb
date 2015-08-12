@@ -53,5 +53,4 @@ module RubyBursaTeamProject
         enable_starttls_auto: true
     }
   end
-
 end
