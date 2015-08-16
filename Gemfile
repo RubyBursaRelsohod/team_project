@@ -32,6 +32,9 @@ gem 'simple_form'
 gem 'devise', '~> 3.5.1'
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'quiet_assets', group: :development
+gem 'annotate', '~> 2.6.6'
+
 gem 'kaminari'
 gem 'declarative_authorization'
 gem 'paperclip', '~> 4.3'

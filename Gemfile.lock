@@ -56,6 +56,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
+    annotate (2.6.10)
+      activerecord (>= 3.2, <= 4.3)
+      rake (~> 10.4)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.2)
@@ -220,6 +223,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -364,6 +369,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  annotate (~> 2.6.6)
   aws-sdk (~> 1.6)
   bcrypt (~> 3.1.7)
   better_errors
@@ -388,6 +394,7 @@ DEPENDENCIES
   paperclip (~> 4.3)
   pg
   pry
+  quiet_assets
   rails (= 4.2.3)
   rails-assets-bootstrap!
   rails-erd
