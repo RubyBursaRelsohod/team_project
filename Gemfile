@@ -32,6 +32,11 @@ gem 'simple_form'
 gem 'devise', '~> 3.5.1'
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'kaminari'
+gem 'declarative_authorization'
+gem 'paperclip', '~> 4.3'
+gem 'aws-sdk', '~> 1.6'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
