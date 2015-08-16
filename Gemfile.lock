@@ -56,9 +56,17 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
+    annotate (2.6.10)
+      activerecord (>= 3.2, <= 4.3)
+      rake (~> 10.4)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.2)
+    aws-sdk (1.64.0)
+      aws-sdk-v1 (= 1.64.0)
+    aws-sdk-v1 (1.64.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -79,6 +87,10 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     choice (0.2.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.7)
+      climate_control (>= 0.0.3, < 1.0)
     codeclimate-test-reporter (0.4.7)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
@@ -93,6 +105,7 @@ GEM
     daemons (1.2.3)
     database_cleaner (1.4.1)
     debug_inspector (0.0.2)
+    declarative_authorization (0.5.7)
     devise (3.5.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -186,6 +199,7 @@ GEM
       thin (~> 1.5.0)
     method_source (0.8.2)
     mime-types (2.6.1)
+    mimemagic (0.3.0)
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.2)
@@ -196,6 +210,12 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
+    paperclip (4.3.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
     pg (0.18.2)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
@@ -203,6 +223,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -347,6 +369,8 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  annotate (~> 2.6.6)
+  aws-sdk (~> 1.6)
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
@@ -355,6 +379,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   database_cleaner
+  declarative_authorization
   devise (~> 3.5.1)
   email_spec
   factory_girl_rails
@@ -363,10 +388,13 @@ DEPENDENCIES
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   letter_opener
   mailcatcher
+  paperclip (~> 4.3)
   pg
   pry
+  quiet_assets
   rails (= 4.2.3)
   rails-assets-bootstrap!
   rails-erd
