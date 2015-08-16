@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  price                :float
+#  country              :string
+#  company              :string
+#  quantity             :integer
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  products_category_id :integer
+#
+
 class Product < ActiveRecord::Base
   has_one :guitar
   has_one :saxophone

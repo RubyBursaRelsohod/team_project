@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id              :integer          not null, primary key
+#  delivery_date   :datetime
+#  creation_date   :datetime
+#  payment_type    :string
+#  delivery_type   :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  order_status_id :integer
+#  user_id         :integer
+#
+
 # Order model
 class Order < ActiveRecord::Base
   has_many :orders_products, inverse_of: :order

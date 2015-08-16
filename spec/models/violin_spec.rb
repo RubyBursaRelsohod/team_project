@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: violins
+#
+#  id            :integer          not null, primary key
+#  weight        :integer
+#  body_material :string
+#  size          :string
+#  string_count  :integer
+#  bow_included  :boolean
+#  color         :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  product_id    :integer
+#
+
 require "rails_helper"
 
 RSpec.describe Violin, type: :model do
