@@ -21,7 +21,6 @@ RSpec.describe Guitar, type: :model do
     it { should validate_presence_of :chords }
     it { should validate_presence_of :dimensions }
     it { should validate_presence_of :weight }
-    it { should validate_presence_of :is_digital }
     it { should validate_presence_of :product_id }
     it { should validate_numericality_of :product_id }
     it { should validate_numericality_of :frets }

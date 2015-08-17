@@ -24,5 +24,4 @@ class Piano < ActiveRecord::Base
   validates :keys_number, :product_id, presence: true,
                           numericality: { greater_than: 0,
                                           only_integer: true }
-  validates :is_digital, presence: true
 end
