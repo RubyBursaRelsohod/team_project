@@ -49,8 +49,7 @@ module RubyBursaTeamProject
         port: 587,
         user_name: "relsohod@gmail.com",
         password: "RubyBursaRelsohod",
-        authentication: "login",
-        enable_starttls_auto: true
+        authentication: "login"
     }
   end
 end

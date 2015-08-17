@@ -19,11 +19,10 @@ RSpec.describe Piano, type: :model do
   describe "validations" do
     it { should validate_presence_of :color }
     it { should validate_presence_of :keys_number }
-    it { should validate_presence_of :is_digital }
     it { should validate_presence_of :product_id }
     it { should validate_numericality_of :keys_number }
     it { should validate_numericality_of :product_id }
-  end 
+  end
   describe ".save" do
     it { should allow_value("green").for(:color) }
     it { should allow_value(1).for(:keys_number) }
