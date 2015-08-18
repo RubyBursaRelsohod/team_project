@@ -29,7 +29,6 @@ RSpec.describe Piano, type: :model do
     it { should allow_value(1).for(:product_id) }
   end
   describe "fail to .save" do
-    it { should_not allow_value(0, "52").for(:color) }
     it { should_not allow_value(-1, 0, "dsd").for(:keys_number) }
     it { should_not allow_value(-1, 0, "dsd").for(:product_id) }
   end
