@@ -40,6 +40,8 @@ gem 'declarative_authorization'
 gem 'paperclip', '~> 4.3'
 gem 'aws-sdk', '~> 1.6'
 
+gem 'table_print'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

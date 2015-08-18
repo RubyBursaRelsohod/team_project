@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811161021) do
+ActiveRecord::Schema.define(version: 20150818091101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(version: 20150811161021) do
   end
 
   create_table "saxophones", force: :cascade do |t|
-    t.string   "type"
+    t.string   "saxophone_type"
     t.string   "tonality"
     t.integer  "keys_number"
     t.string   "low_key"
@@ -145,8 +145,8 @@ ActiveRecord::Schema.define(version: 20150811161021) do
     t.float    "bell_diametr"
     t.boolean  "bell_engraved"
     t.string   "body_material"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "product_id"
   end
 

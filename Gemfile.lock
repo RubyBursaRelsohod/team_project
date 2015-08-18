@@ -340,6 +340,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.10)
+    table_print (1.5.4)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -405,6 +406,7 @@ DEPENDENCIES
   shoulda-matchers
   simple_form
   spring
+  table_print
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
