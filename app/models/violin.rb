@@ -15,6 +15,10 @@
 #
 
 class Violin < ActiveRecord::Base
+  # ActiveAdmin display (lib/active_admin_displayable.rb).
+  # Includes the display_name method for ActiveAdmin controls.
+  include ActiveAdminDisplayable
+
   belongs_to :product
 
   validates :weight, presence: true,

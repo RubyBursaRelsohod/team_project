@@ -9,6 +9,10 @@ ProductsCategory.create!(id: saxophone_id, name: 'Saxophone')
 ProductsCategory.create!(id: guitar_id, name: 'Guitar')
 ProductsCategory.create!(id: piano_id, name: 'Piano')
 
+# AdminUser seeds:
+AdminUser.create!(email: 'admin@example.com', password: 'password',
+                  password_confirmation: 'password')
+
 # User seeds:
 15.times do |i|
   User.new.tap do |u|
@@ -93,7 +97,7 @@ end
 
     Saxophone.new.tap do |s|
       s.product_id = 800 + i
-      s.type = 'Super Type'
+      s.saxophone_type = 'Super Type'
       s.tonality = 'Tonality 80lvl'
       s.keys_number = 35
       s.low_key = 'very low'

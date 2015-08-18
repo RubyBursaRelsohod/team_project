@@ -2,18 +2,18 @@
 #
 # Table name: saxophones
 #
-#  id            :integer          not null, primary key
-#  type          :string
-#  tonality      :string
-#  keys_number   :integer
-#  low_key       :string
-#  high_key      :string
-#  bell_diametr  :float
-#  bell_engraved :boolean
-#  body_material :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  product_id    :integer
+#  id             :integer          not null, primary key
+#  saxophone_type :string
+#  tonality       :string
+#  keys_number    :integer
+#  low_key        :string
+#  high_key       :string
+#  bell_diametr   :float
+#  bell_engraved  :boolean
+#  body_material  :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  product_id     :integer
 #
 
 require "rails_helper"
@@ -21,7 +21,7 @@ require "rails_helper"
 RSpec.describe Saxophone, type: :model do
   describe "validations" do
     it { should validate_presence_of :product_id }
-    it { should validate_presence_of :type }
+    it { should validate_presence_of :saxophone_type }
     it { should validate_presence_of :tonality }
     it { should validate_presence_of :bell_diametr }
     it { should validate_presence_of :low_key }
