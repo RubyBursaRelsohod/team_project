@@ -41,6 +41,7 @@ gem 'paperclip', '~> 4.3'
 gem 'aws-sdk', '~> 1.6'
 
 gem 'table_print'
+gem 'country_select', github: 'stefanpenner/country_select'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

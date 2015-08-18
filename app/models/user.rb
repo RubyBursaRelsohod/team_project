@@ -52,4 +52,12 @@ class User < ActiveRecord::Base
                     }
   validates :phone, presence: true
   validates :address, presence: true
+
+  # Method for displaying user's first_name
+  # and last_name in AdminPanel. ActiveAdmin uses
+  # the display_name method in models for its
+  # drop-down inputs.
+  def display_name
+    first_name + ' ' + last_name
+  end
 end

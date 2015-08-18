@@ -15,12 +15,15 @@
 
 # Piano model
 class Piano < ActiveRecord::Base
+  # ActiveAdmin display (lib/active_admin_displayable.rb).
+  # Includes the display_name method for ActiveAdmin controls.
+  include ActiveAdminDisplayable
+
   # associations
   belongs_to :product
 
   # validations
-  validates :color, presence: true,
-                    format: { with: /\A[^0-9]+\z/i }
+  validates :color, presence: true
   validates :keys_number, :product_id, presence: true,
                           numericality: { greater_than: 0,
                                           only_integer: true }
