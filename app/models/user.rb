@@ -58,6 +58,6 @@ class User < ActiveRecord::Base
   # the display_name method in models for its
   # drop-down inputs.
   def display_name
-    first_name + ' ' + last_name
+    id.to_s + '. ' + first_name + ' ' + last_name
   end
 end

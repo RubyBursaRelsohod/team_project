@@ -20,8 +20,6 @@ ActiveAdmin.register User do
     column :first_name
     column :last_name
     column :email
-    column :phone
-    column :address
     column :created_at
     column :updated_at
     actions

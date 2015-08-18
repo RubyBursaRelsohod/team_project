@@ -1,5 +1,5 @@
 ActiveAdmin.register Comment, as: "ProductComment" do
-  permit_params :id, :user_id, :product_id, :body, :user, :product
+  permit_params :user_id, :product_id, :body
 
   index do
     selectable_column
