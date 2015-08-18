@@ -1,9 +1,10 @@
 
-# ProductsCategory seeds:
 violin_id = 1
 saxophone_id = 2
 guitar_id = 3
 piano_id = 4
+
+# ProductsCategory seeds:
 ProductsCategory.create!(id: violin_id, name: 'Violin')
 ProductsCategory.create!(id: saxophone_id, name: 'Saxophone')
 ProductsCategory.create!(id: guitar_id, name: 'Guitar')

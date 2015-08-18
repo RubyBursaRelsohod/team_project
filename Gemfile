@@ -34,6 +34,7 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'quiet_assets', group: :development
 gem 'annotate', '~> 2.6.6'
+gem 'rateaux'
 
 gem 'kaminari'
 gem 'declarative_authorization'
