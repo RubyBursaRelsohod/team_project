@@ -20,6 +20,7 @@ class Product < ActiveRecord::Base
   has_many :comments
   belongs_to :products_category
   has_many :orders_products
+  has_many :products_photos
   has_one :violin
 
   validates_associated :comments, :orders_products

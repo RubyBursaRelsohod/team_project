@@ -102,4 +102,5 @@ Rails.application.configure do
       password: "RubyBursaRelsohod",
       authentication: "login"
   }
+
 end
