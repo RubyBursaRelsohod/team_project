@@ -1,0 +1,57 @@
+<div class="container">
+	<div class="row-fluid">
+		<div>
+			<div class="col-sm-4 col-md-4 col-md-offset-4 user-details">
+				<div class="user-image">
+					<%= gravatar_tag @user.email, size: 100, secure: true, html: {class: 'img-circle', title: @user.full_name} %>
+				</div>
+				<div class="user-info-block">
+					<div class="user-heading">
+						<h3><%= @user.full_name %></h3>
+						<span class="help-block">Chandigarh IN</span>
+					</div>
+					<ul class="navigation">
+						<li class="active">
+							<a href="#information" data-toggle="tab">
+								<span class="glyphicon glyphicon-user"></span>
+							</a>
+						</li>
+						<li>
+							<a href="#settings" data-toggle="tab">
+								<span class="glyphicon glyphicon-info-sign"></span>
+							</a>
+						</li>
+						<li>
+							<a href="#email" data-toggle="tab">
+								<span class="glyphicon glyphicon-cog"></span>
+							</a>
+						</li>
+						<li>
+							<a href="#events" data-toggle="tab">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</a>
+						</li>
+					</ul>
+					<div class="user-body">
+						<div class="tab-content">
+							<div id="information" class="tab-pane active">
+								<!-- <h4>Account Information</h4> -->
+								<%= render 'account_info' %>
+							</div>
+							<div id="settings" class="tab-pane">
+								<!-- <h4>Settings</h4> -->
+								<%= render 'edit_info_form' %>
+							</div>
+							<div id="email" class="tab-pane">
+								<h4>Send Message</h4>
+							</div>
+							<div id="events" class="tab-pane">
+								<h4>Events</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>RubyBursaTeamProject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -13,8 +13,6 @@
     <% else %>
         <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
     <% end %>
-<!--     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
 
     <% flash.each do |type, message| %>
       <div class="alert alert-info fade-in">
@@ -25,6 +23,6 @@
 
     <%= yield %>
   </div>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>

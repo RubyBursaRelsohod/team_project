@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profile/index'
+
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -10,4 +12,6 @@ Rails.application.routes.draw do
 
   resources :saxophones, concerns: :paginatable
   resources :violins, concerns: :paginatable
+
+  resources :users, only: [:show]
 end
