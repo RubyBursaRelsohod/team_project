@@ -45,17 +45,4 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
   config.action_mailer.delivery_method :smtp
 
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => 'relsohod',
-      :access_key_id => 'AKIAJUG3OJ3URFD2W44A',
-      :secret_access_key => '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'
-    }
-#    ,
-#   :s3_host_name => 's3-website-us-east-1.amazonaws.com',
-#    :url => 'http://relsohod.s3-website-us-east-1.amazonaws.com'
-#    ,
-#    :path => '/:class/:attachment/:id_partition/:style/:filename'
-  }
 end
