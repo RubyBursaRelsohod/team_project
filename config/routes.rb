@@ -8,11 +8,9 @@ Rails.application.routes.draw do
     get '(page/:page)', action: :index, on: :collection, as: ''
   end
 
-
   resources :saxophones, concerns: :paginatable
   resources :violins, concerns: :paginatable
 
   resources :guitars, concerns: :paginatable
   resources :pianos, concerns: :paginatable
-
 end

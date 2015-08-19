@@ -1,13 +1,13 @@
 class PianosController < ApplicationController
-def index
+  def index
     @pianos = Product.every(:Piano)
-               .order('id')
-               .page(params[:page])
-               .per(10)
+              .order('id')
+              .page(params[:page])
+              .per(10)
 
     respond_to do |format|
       format.html
-      format.js {}
+      format.js
     end
   end
 end
