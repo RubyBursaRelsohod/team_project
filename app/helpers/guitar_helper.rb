@@ -1,0 +1,2 @@
+module GuitarHelper
+end
