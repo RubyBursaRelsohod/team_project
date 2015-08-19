@@ -1,0 +1,3 @@
+// Ajax pagination
+$('#products').html("<%= escape_javascript render partial: 'products/product', collection: @saxophones, as: :product %>");
+$('#paginator').html('<%= escape_javascript(paginate(@saxophones, remote: true).to_s) %>');
