@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
 
   resources :saxophones, concerns: :paginatable
+  resources :violins, concerns: :paginatable
 end
