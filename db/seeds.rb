@@ -1,9 +1,27 @@
 
-# ProductsCategory seeds:
 violin_id = 1
 saxophone_id = 2
 guitar_id = 3
 piano_id = 4
+
+description =
+  <<-DESC
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
+    veritatis illo,sint recusandae at, repellendus minus. Voluptates,
+    nam laudantium obcaecati quia veritatis, maxime et quas quod velit
+    eligendi eveniet pariatur? Eum facilis doloribus, quibusdam eligendi
+    nihil voluptatem, veniam hic voluptatum culpa labore facere quasi,
+    natus? Sed eaque, enim maiores aperiam quas quis unde optio, omnis
+    laborum, porro nemo delectus perspiciatis vitae fugiat ullam. Illum
+    assumenda deserunt possimus aspernatur, commodi temporibus, veritatis
+    magnam, consequatur sed enim nemo esse quidem. Amet tempora laborum,
+    corporis, dignissimos neque possimus dicta ipsam, consequatur
+    voluptatibus minus vitae autem! Odio aliquam dolores magnam fuga
+    provident, voluptatibus corporis.
+  DESC
+
+
+# ProductsCategory seeds:
 ProductsCategory.create!(id: violin_id, name: 'Violin')
 ProductsCategory.create!(id: saxophone_id, name: 'Saxophone')
 ProductsCategory.create!(id: guitar_id, name: 'Guitar')
@@ -43,6 +61,7 @@ end
       p.country = 'Austria'
       p.company = 'Violin Company'
       p.quantity = 50
+      p.description = description
 
       p.save!
     end
@@ -67,6 +86,7 @@ end
       p.country = 'Canada'
       p.company = 'Guitar Company'
       p.quantity = 50
+      p.description = description
 
       p.save!
     end
@@ -91,6 +111,7 @@ end
       p.country = 'Jamaica'
       p.company = 'Saxophone Company'
       p.quantity = 50
+      p.description = description
 
       p.save!
     end
@@ -118,6 +139,7 @@ end
       p.country = 'Japan'
       p.company = 'Piano Company'
       p.quantity = 50
+      p.description = description
 
       p.save!
     end
