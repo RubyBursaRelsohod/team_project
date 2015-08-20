@@ -36,7 +36,7 @@ gem 'annotate', '~> 2.6.6'
 gem 'rateaux'
 
 gem 'kaminari'
-gem 'declarative_authorization'
+gem 'declarative_authorization', github: 'stffn/declarative_authorization'
 gem 'paperclip', '~> 4.3'
 gem 'aws-sdk', '~> 1.6'
 

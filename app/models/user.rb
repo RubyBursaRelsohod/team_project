@@ -28,8 +28,9 @@
 #  unlock_token           :string
 #  locked_at              :datetime
 #
-
+# User model
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :roles
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -39,7 +40,7 @@ class User < ActiveRecord::Base
   has_many :orders
 
   validates :first_name, :last_name, presence: true, length: { minimum: 2 }
-  validates_each :first_name, :last_name do  |rec, attr, value|
+  validates_each :first_name, :last_name do |rec, attr, value|
     rec.errors.add(attr, "Must start with capital letter") if value =~ /\A[a-z]/
   end
 
@@ -63,5 +64,9 @@ class User < ActiveRecord::Base
 
   def full_name
     first_name + ' ' + last_name
+  end
+
+  def role_symbols
+    (roles || []).map { |r| r.title.to_sym }
   end
 end

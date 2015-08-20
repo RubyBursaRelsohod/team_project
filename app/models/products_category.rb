@@ -7,7 +7,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
+# ProductsCategory model
 class ProductsCategory < ActiveRecord::Base
   has_many :products
 

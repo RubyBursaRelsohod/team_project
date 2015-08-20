@@ -11,8 +11,9 @@
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  products_category_id :integer
+#  description          :text
 #
-
+# Product model
 class Product < ActiveRecord::Base
   has_one :guitar
   has_one :saxophone
@@ -21,6 +22,7 @@ class Product < ActiveRecord::Base
   belongs_to :products_category
   has_many :orders_products
   has_many :products_photos
+  has_many :products_sounds
   has_one :violin
 
   validates_associated :comments, :orders_products

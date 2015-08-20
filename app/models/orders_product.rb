@@ -9,7 +9,7 @@
 #  product_id :integer
 #  order_id   :integer
 #
-
+# OrdersProduct model
 class OrdersProduct < ActiveRecord::Base
   # associations
   belongs_to :product

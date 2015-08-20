@@ -11,6 +11,7 @@
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  products_category_id :integer
+#  description          :text
 #
 
 FactoryGirl.define do
