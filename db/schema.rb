@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819095649) do
+ActiveRecord::Schema.define(version: 20150819165538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,6 +137,30 @@ ActiveRecord::Schema.define(version: 20150819095649) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "products_photos", force: :cascade do |t|
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "product_id"
+  end
+
+  add_index "products_photos", ["product_id"], name: "index_products_photos_on_product_id", using: :btree
+
+  create_table "products_sounds", force: :cascade do |t|
+    t.string   "sound_file_name"
+    t.string   "sound_content_type"
+    t.integer  "sound_file_size"
+    t.datetime "sound_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "product_id"
+  end
+
+  add_index "products_sounds", ["product_id"], name: "index_products_sounds_on_product_id", using: :btree
+
   create_table "saxophones", force: :cascade do |t|
     t.string   "saxophone_type"
     t.string   "tonality"
@@ -208,6 +232,8 @@ ActiveRecord::Schema.define(version: 20150819095649) do
   add_foreign_key "orders_products", "products"
   add_foreign_key "pianos", "products"
   add_foreign_key "products", "products_categories"
+  add_foreign_key "products_photos", "products"
+  add_foreign_key "products_sounds", "products"
   add_foreign_key "saxophones", "products"
   add_foreign_key "violins", "products"
 end

@@ -10,6 +10,8 @@ default: &default
 development:
   <<: *default
   database: ruby_bursa_team_project_dev_db
+#  access_key_id: 'AKIAIQ5FJPEYE7SNG4L'
+#  secret_access_key: 'wqod1cHg07dpsFy+AnJF2pp4Q8+Vaf0jSDVi+uD'
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -44,6 +46,8 @@ development:
 test:
   <<: *default
   database: ruby_bursa_team_project_test_db
+#  access_key_id: 'AKIAIQ5FJPEYE7SNG4L'
+#  secret_access_key: 'wqod1cHg07dpsFy+AnJF2pp4Q8+Vaf0jSDVi+uD'
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -67,3 +71,6 @@ test:
 production:
   <<: *default
   database: ruby_bursa_team_project_db
+#  access_key_id: 'AKIAIQ5FJPEYE7SNG4L'
+#  secret_access_key: 'wqod1cHg07dpsFy+AnJF2pp4Q8+Vaf0jSDVi+uD'
+
