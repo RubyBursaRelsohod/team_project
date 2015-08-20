@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root "test#index"
+  root 'test#index'
 
   concern :paginatable do
     get '(page/:page)', action: :index, on: :collection, as: ''
@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :pianos, concerns: :paginatable
 
   resources :users, only: [:show]
+
+  get '*path', to: 'test#index'
 end
