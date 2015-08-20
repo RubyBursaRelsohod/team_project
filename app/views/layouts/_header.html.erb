@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse js-navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown mega-dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse The Store<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse The Store<span class="glyphicon glyphicon-chevron-down"></span></a>
           <ul class="dropdown-menu mega-dropdown-menu row">
             <li class="col-sm-3">
               <ul>
@@ -84,23 +84,27 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= gravatar_tag current_user.email, size: 30 %>      <%= current_user.full_name %> <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= gravatar_tag current_user.email, size: 30 %>      <%= current_user.full_name %> (₴560000)<span class="glyphicon glyphicon-chevron-down"></span></a>
             <ul class="dropdown-menu">
               <!-- <li><a href="#">Profile</a></li> -->
               <li><%= link_to 'Profile', user_path(current_user.id) %></li>
-              <li><a href="#">Shopping Cart</a></li>
+              <li><a href="#">Shopping Cart (₴560000)</a></li>
               <li><%= link_to 'Settings', edit_user_registration_path %></li>
               <li role="separator" class="divider"></li>
               <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
+        <!-- SEARCH BUTTON -->
+        <li id="search-list-element">
+          <a href="#search">Search<span class="glyphicon glyphicon-search"></span></a>
+        </li>
       </ul>
 
     <% else %>
-
+    <!-- LOGIN START -->
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="glyphicon glyphicon-chevron-down"></span></a>
       <ul id="login-dp" class="dropdown-menu">
         <li>
            <div class="row">
@@ -142,8 +146,23 @@
         </li>
       </ul>
         </li>
-      </ul>
+        <!-- SEARCH BUTTON -->
+        <li id="search-list-element">
+          <a href="#search">Search<span class="glyphicon glyphicon-search"></span></a>
+        </li>
+
+      </ul> <!-- LOGIN END -->
+
       <% end %>
     </div><!-- /.nav-collapse -->
   </nav>
+</div>
+
+<!-- SEARCH FIELD -->
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="type keyword(s) here" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
 </div>

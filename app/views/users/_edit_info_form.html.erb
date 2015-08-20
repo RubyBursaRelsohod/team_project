@@ -1,8 +1,9 @@
-<!-- <div class="container">
+<!-- <div class="container"> -->
     <div class="row user-edit-info">
         <div class="col-sm-8">
-            <h4 class="page-header">Edit Your Info</h4>
-            <form role="form">
+            <h4 class="page-header">Edit Your Info<hr>
+            <br>
+<!--             <form role="form">
                 <div class="form-group float-label-control">
                     <label for="">First name</label>
                     <input type="email" class="form-control" placeholder="First name">
@@ -10,12 +11,12 @@
                 <div class="form-group float-label-control">
                     <label for="">Last name</label>
                     <input type="email" class="form-control" placeholder="Last name">
-                </div>
-                <div class="form-group float-label-control">
+                </div> -->
+<!--                 <div class="form-group float-label-control">
                     <label for="">Password</label>
                     <input type="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="form-group float-label-control">
+                </div> -->
+<!--                 <div class="form-group float-label-control">
                     <label for="">Shipping address</label>
                     <textarea class="form-control" placeholder="Shipping address" rows="1"></textarea>
                 </div>
@@ -23,23 +24,49 @@
                     <label for="">Phone number</label>
                     <input type="tel" class="form-control" placeholder="Phone number">
                 </div>
-            </form>
+            </form> -->
 
-            <form role="form">
+<!--             <form role="form">
                 <div class="form-group float-label-control label-bottom">
                     <label for="">Username</label>
                     <input type="email" class="form-control" placeholder="Username">
                 </div>
-            </form>
+            </form> -->
 
-            <form role="form">
-                <div class="form-group float-label-control">
-                    <label for="">Email Address</label>
-                    <input type="email" class="form-control" placeholder="What's your email address?">
-                </div>
-            </form>
+    <%= simple_form_for(resource, as: resource_name,
+                                  url: registration_path(resource_name),
+                                  html: { role: "form", method: :patch }) do |f| %>
+        <div class="form-group float-label-control label-top">
+          <%= f.input :first_name, placeholder: "First name", required: true, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="form-group float-label-control label-top">
+          <%= f.input :last_name, placeholder: "Last name", required: true, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="form-group float-label-control label-top">
+          <%= f.input :email, placeholder: "Email", required: true, input_html: { class: 'form-control' } %>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <div class="form-group float-label-control label-top">
+          <%= f.input :phone, placeholder: "Phone number", required: true, input_html: { class: 'form-control', autocomplete: "off" } %>
+        </div>
+        <div class="form-group float-label-control label-top">
+          <%= f.input :address, as: :text, placeholder: "Shipping address", label: "Shipping address", required: true, input_html: { class: 'form-control', rows: 1 } %>
+        </div>
+        <div class="form-group float-label-control label-top">
+          <%= f.input :password, placeholder: "Password", required: false, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="form-group float-label-control label-top">
+          <%= f.input :password_confirmation, placeholder: "Confirm password", required: false, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="form-group float-label-control label-top">
+          <%= f.input :current_password, placeholder: "Current password", required: false, input_html: { class: 'form-control' } %>
+        </div>
+
+
+        <%= f.button :submit, "Save", class: "btn btn-primary btn-block" %>
+    <% end %>
 
         </div>
     </div>
-</div>
- -->

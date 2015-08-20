@@ -1,3 +1,16 @@
 <div class="jumbotron">
-	<h1>Hello, Relsohod!</h1>
+	<h2>This is a temporary main page and it will be removed soon.</h2>
+	<hr>
+	<br><h4>Below are some links to navigate around the shop:</h4><br>
+	<%= link_to 'Saxophones', saxophones_path %>
+	<br>
+	<%= link_to 'Pianos', pianos_path %>
+	<br>
+	<%= link_to 'Guitars', guitars_path %>
+	<br>
+	<%= link_to 'Violins', violins_path %>
+	<hr><br>
+	<% if user_signed_in? %>
+		<%= link_to 'Edit User', edit_user_registration_path %>
+	<% end %>
 </div>

@@ -14,6 +14,9 @@ class ApplicationController < ActionController::Base
       :first_name, :last_name, :email, :password,
       :password_confirmation, :phone, :address)
     }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit({ roles: [] },
+      :first_name, :last_name, :phone, :address)
+    }
   end
 
   # Sets global variables that
@@ -33,5 +36,11 @@ class ApplicationController < ActionController::Base
       guitars: Product.every(:Guitar),
       saxophones: Product.every(:Saxophone)
     }
+  end
+
+  private
+
+  def after_update_path_for(*)
+    session["user_return_to"] || root_path
   end
 end
