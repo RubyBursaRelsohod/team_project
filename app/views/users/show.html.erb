@@ -17,17 +17,17 @@
           </li>
           <li>
             <a href="#settings" data-toggle="tab">
-              <span class="glyphicon glyphicon-info-sign"></span>
-            </a>
-          </li>
-          <li>
-            <a href="#email" data-toggle="tab">
               <span class="glyphicon glyphicon-cog"></span>
             </a>
           </li>
           <li>
-            <a href="#events" data-toggle="tab">
-              <span class="glyphicon glyphicon-calendar"></span>
+            <a href="#history" data-toggle="tab">
+              <span class="glyphicon glyphicon-list-alt"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#help" data-toggle="tab">
+              <span class="glyphicon glyphicon-question-sign"></span>
             </a>
           </li>
         </ul>
@@ -37,13 +37,27 @@
               <%= render 'account_info' %>
             </div>
             <div id="settings" class="tab-pane">
-              <h4>Settings</h4>
+              <%= render 'edit_info_form' %>
             </div>
-            <div id="email" class="tab-pane">
-              <h4>Send Message</h4>
+            <div id="history" class="tab-pane">
+              <h4>Purchase History</h4><hr><br>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>You haven't made any purchases yet.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div id="events" class="tab-pane">
-              <h4>Events</h4>
+            <div id="help" class="tab-pane user-edit-info">
+              <h4>Ask a Question</h4><hr><br>
+              <form role="form">
+                  <div class="form-group float-label-control label-top">
+                      <label for="">Your question...</label>
+                      <textarea class="form-control" placeholder="Your question..." rows="3"></textarea>
+                  </div>
+                  <button class="btn btn-primary btn-block">Send</button>
+              </form>
             </div>
           </div>
         </div>

@@ -9,4 +9,8 @@
 	<%= link_to 'Guitars', guitars_path %>
 	<br>
 	<%= link_to 'Violins', violins_path %>
+	<hr><br>
+	<% if user_signed_in? %>
+		<%= link_to 'Edit User', edit_user_registration_path %>
+	<% end %>
 </div>
