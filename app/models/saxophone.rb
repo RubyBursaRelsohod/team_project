@@ -15,7 +15,7 @@
 #  updated_at     :datetime         not null
 #  product_id     :integer
 #
-
+# Saxophone model
 class Saxophone < ActiveRecord::Base
   # ActiveAdmin display (lib/active_admin_displayable.rb).
   # Includes the display_name method for ActiveAdmin controls.

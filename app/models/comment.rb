@@ -9,7 +9,7 @@
 #  user_id    :integer
 #  product_id :integer
 #
-
+# Comment model
 class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :product
