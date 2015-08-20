@@ -36,8 +36,11 @@ class Product < ActiveRecord::Base
 
   # Scope for getting all the instruments of
   # specific category
-  scope :every, ->(instrument) {
+  scope :every, lambda { |instrument|
     where(products_category: (ProductsCategory.where(name: instrument)).first)
   }
 
+  scope :most_expensive, lambda { |instrument|
+    Product.every(instrument).order(:price).last
+  }
 end

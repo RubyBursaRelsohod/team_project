@@ -1,55 +1,58 @@
-.glyphicon { margin-right: 5px; }
+.products-namespace {
 
-.thumbnail {
-    margin-bottom: 20px;
-    -webkit-border-radius: 0;
-       -moz-border-radius: 0;
-            border-radius: 0;
-}
+    .glyphicon { margin-right: 5px; }
 
-.item {
-    &.list-group-item {
-        float: none;
-        width: 100%;
-        background: #fff;
-        margin-bottom: 10px;
+    .thumbnail {
+        margin-bottom: 20px;
+        -webkit-border-radius: 0;
+           -moz-border-radius: 0;
+                border-radius: 0;
+    }
 
-        &:nth-of-type(odd) {
-            background: #eee;
-        }
+    .item {
+        &.list-group-item {
+            float: none;
+            width: 100%;
+            background: #fff;
+            margin-bottom: 10px;
 
-        &:nth-of-type(odd):hover,
-        &:hover {
-            background: #428bca;
-        }
+            &:nth-of-type(odd) {
+                background: #eee;
+            }
 
-        &:before,
-        &:after {
-            display: table;
-            content: " ";
-        }
+            &:nth-of-type(odd):hover,
+            &:hover {
+                background: #428bca;
+            }
 
-        &:after {
-            clear: both;
-        }
+            &:before,
+            &:after {
+                display: table;
+                content: " ";
+            }
 
-        .list-group-image {
-            margin-right: 10px;
-        }
+            &:after {
+                clear: both;
+            }
 
-        img {
-            float: left;
-        }
+            .list-group-image {
+                margin-right: 10px;
+            }
 
-        .thumbnail {
-            margin-bottom: 0;
-        }
+            img {
+                float: left;
+            }
 
-        .caption {
-            padding: 9px 9px 0 9px;
+            .thumbnail {
+                margin-bottom: 0;
+            }
+
+            .caption {
+                padding: 9px 9px 0 9px;
+            }
         }
     }
-}
-.list-group-item-text {
-    margin: 0 0 11px;
+    .list-group-item-text {
+        margin: 0 0 11px;
+    }
 }

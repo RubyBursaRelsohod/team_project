@@ -1,22 +1,24 @@
-<div id="paginator">
-    <%= paginate @saxophones, remote: true %>
-</div>
-<div class="well well-sm">
-    <strong>Category Title</strong>
-    <div class="btn-group">
-        <a href="" id="list" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-th-list"></span>
-            List
-        </a>
-        <a href="" id="grid" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-th"></span>
-            Grid
-        </a
-    ></div>
-</div>
+<div class="products-namespace">
+    <div id="paginator">
+        <%= paginate @saxophones, remote: true %>
+    </div>
+    <div class="well well-sm">
+        <strong>Category Title</strong>
+        <div class="btn-group">
+            <a href="" id="list" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-th-list"></span>
+                List
+            </a>
+            <a href="" id="grid" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-th"></span>
+                Grid
+            </a
+        ></div>
+    </div>
 
-<div id="products" class="row list-group">
-        <%= render partial: 'products/product',
-                   collection: @saxophones,
-                   as: :product %>
+    <div id="products" class="row list-group">
+            <%= render partial: 'products/product',
+                       collection: @saxophones,
+                       as: :product %>
+    </div>
 </div>

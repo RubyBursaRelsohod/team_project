@@ -1,3 +1,4 @@
+<div class="devise-forms">
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'form-signin well' }) do |f| %>
   <h2 class="text-center">Forgot your password?</h2>
   <%= f.error_notification %>
@@ -7,3 +8,4 @@
     <%= f.button :submit, "Send me reset password instructions", class: "btn btn-primary btn-block" %>
 	<%= render "devise/shared/links" %>
 <% end %>
+</div>
