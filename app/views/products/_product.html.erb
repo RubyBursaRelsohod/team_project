@@ -6,12 +6,12 @@
 				<%= product.name %>
 			</h4>
 			<p class="group inner list-group-item-text">
-				<%= product.description.truncate(82, separator: ' ') %>
+				<%= shorten(product, 82) %>
 			</p>
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
 					<p class="lead">
-						<%= number_to_currency(product.price, unit: '₴') %>
+						<%= to_price(product) %>
 					</p>
 				</div>
 				<div class="col-xs-12 col-md-6">

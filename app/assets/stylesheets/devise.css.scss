@@ -1,8 +1,9 @@
+
 .form-signin {
 	max-width: 330px;
 	padding: 15px;
 	margin: 0 auto;
-	
+
 	.form-signin-heading,
 	.checkbox {
 		margin-bottom: 10px;
@@ -19,7 +20,7 @@
 		        box-sizing: border-box;
 		padding: 10px;
 		font-size: 16px;
-		
+
 		&:focus {
 			z-index: 2;
 		}
@@ -30,6 +31,6 @@
 	}
 
 	.glyphicon {
-		top: 0;
+		top: 0 !important;
 	}
 }

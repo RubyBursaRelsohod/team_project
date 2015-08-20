@@ -1,6 +1,6 @@
-class ViolinsController < ApplicationController
+class GuitarsController < ApplicationController
   def index
-    @violins = Product.every(:Violin)
+    @guitars = Product.every(:Guitar)
                .order('id')
                .page(params[:page])
                .per(10)

@@ -1,6 +1,6 @@
 <div class="products-namespace">
     <div id="paginator">
-        <%= paginate @saxophones, remote: true %>
+        <%= paginate @pianos, remote: true %>
     </div>
     <div class="well well-sm">
         <strong>Category Title</strong>
@@ -18,7 +18,7 @@
 
     <div id="products" class="row list-group">
             <%= render partial: 'products/product',
-                       collection: @saxophones,
+                       collection: @pianos,
                        as: :product %>
     </div>
 </div>

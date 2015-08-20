@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :saxophones, concerns: :paginatable
   resources :violins, concerns: :paginatable
+  resources :guitars, concerns: :paginatable
+  resources :pianos, concerns: :paginatable
 
   resources :users, only: [:show]
 end

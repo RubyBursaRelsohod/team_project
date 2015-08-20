@@ -1,3 +1,4 @@
+<div class="devise-forms">
 <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "form-signin well" }) do |f| %>
   <h2 class="text-center">Resend confirmation instructions</h2>
   <%= f.error_notification %>
@@ -8,3 +9,4 @@
   <%= f.button :submit, "Resend confirmation instructions", class: "btn btn-primary btn-block" %>
   <%= render "devise/shared/links" %>
 <% end %>
+</div>

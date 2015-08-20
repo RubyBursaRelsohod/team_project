@@ -1,0 +1,6 @@
+<div class="item <%= if i == 0 then 'active' end %>">
+  <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=<%= item.products_category.name %>" class="img-responsive" alt='<%= item.name %>'></a>
+  <h4><small><%= shorten(item, 50) %></small></h4>
+  <button class="btn btn-primary" type="button"><%= to_price(item) %></button>
+  <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</button>
+</div>
