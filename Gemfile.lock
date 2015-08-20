@@ -24,6 +24,12 @@ GIT
       countries (~> 0.11.0)
       sort_alphabetical (~> 1.0)
 
+GIT
+  remote: git://github.com/stffn/declarative_authorization.git
+  revision: 45e91af20eba71b2828c5c84066bcce3ef032e8a
+  specs:
+    declarative_authorization (1.0.0.pre)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -117,7 +123,6 @@ GEM
     daemons (1.2.3)
     database_cleaner (1.4.1)
     debug_inspector (0.0.2)
-    declarative_authorization (0.5.7)
     devise (3.5.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -401,7 +406,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   country_select!
   database_cleaner
-  declarative_authorization
+  declarative_authorization!
   devise (~> 3.5.1)
   email_spec
   factory_girl_rails
