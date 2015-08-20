@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, presence: true, length: { minimum: 2 }
   validates_each :first_name, :last_name do |rec, attr, value|
-    rec.errors.add(attr, 'Must start with capital letter') if value =~ /\A[a-z]/
+    rec.errors.add(attr, "Must start with capital letter") if value =~ /\A[a-z]/
   end
 
   validates :password, :password_confirmation,
