@@ -84,7 +84,7 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= gravatar_tag current_user.email, size: 30 %>      <%= current_user.full_name %> <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= gravatar_tag current_user.email, size: 30 %>      <%= current_user.full_name %> <span class="glyphicon glyphicon-chevron-down"></span></a>
             <ul class="dropdown-menu">
               <!-- <li><a href="#">Profile</a></li> -->
               <li><%= link_to 'Profile', user_path(current_user.id) %></li>
@@ -142,20 +142,23 @@
         </li>
       </ul>
         </li>
-        <form class="navbar-form" role="search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search...">
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-default">
-                <span class="glyphicon glyphicon-search">
-                  <span class="sr-only">Search...</span>
-                </span>
-              </button>
-            </span>
-          </div>
-        </form>
+        <!-- SEARCH BUTTON -->
+        <li id="search-list-element">
+          <a href="#search">Search<span class="glyphicon glyphicon-search"></span></a>
+        </li>
+
       </ul> <!-- LOGIN END -->
+
       <% end %>
     </div><!-- /.nav-collapse -->
   </nav>
+</div>
+
+<!-- SEARCH FIELD -->
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="type keyword(s) here" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
 </div>

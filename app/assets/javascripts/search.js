@@ -1,25 +1,13 @@
 $(function () {
-	function closeSearch() {
-        var $form = $('.navbar-collapse form[role="search"].active')
-		$form.find('input').val('');
-		$form.removeClass('active');
-	}
+    $('a[href="#search"]').on('click', function(event) {
+        event.preventDefault();
+        $('#search').addClass('open');
+        $('#search > form > input[type="search"]').focus();
+    });
 
-	// Show Search if form is not active // event.preventDefault() is important, this prevents the form from submitting
-	$(document).on('click', '.navbar-collapse form[role="search"]:not(.active) button[type="submit"]', function(event) {
-		event.preventDefault();
-		var $form = $(this).closest('form'),
-			$input = $form.find('input');
-		$form.addClass('active');
-		$input.focus();
-	});
-	// ONLY FOR DEMO // Please use $('form').submit(function(event)) to track from submission
-	// if your form is ajax remember to call `closeSearch()` to close the search container
-	$(document).on('click', '.navbar-collapse form[role="search"].active button[type="submit"]', function(event) {
-		event.preventDefault();
-		var $form = $(this).closest('form'),
-			$input = $form.find('input');
-		$('#showSearchTerm').text($input.val());
-        closeSearch()
-	});
+    $('#search, #search button.close').on('click keyup', function(event) {
+        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            $(this).removeClass('open');
+        }
+    });
 });
