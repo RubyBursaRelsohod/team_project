@@ -20,6 +20,9 @@ authorization do
     has_permission_on :orders, to: :manage do
       if_attribute user_id: is { user.id }
     end
+    has_permission_on :users, to: :update do
+      if_attribute id: is { user.id }
+    end
   end
   # See the readme or GitHub for more examples
 end
