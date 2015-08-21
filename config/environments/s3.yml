@@ -2,8 +2,8 @@
     :storage => :s3,
     :s3_credentials => {
       :bucket => 'relsohod',
-      :access_key_id => 'AKIAJUG3OJ3URFD2W44A',
-      :secret_access_key => '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'
+      :access_key_id => ENV['S3_KEY'],
+      :secret_access_key => ENV['S3_SECRET']
     },
 #   :s3_host_name => 's3-website-us-east-1.amazonaws.com',
     :url => 'http://s3.amazonaws.com/relsohod/:class/:attachment/:id_partition/:style/:basename.:extension',
