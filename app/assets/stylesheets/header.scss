@@ -108,7 +108,7 @@
     background-color:#3b5998;
 }
 .btn-fb:hover{
-    color: #fff;
+    color: #fff !important;
     background-color:#496ebc
 }
 .btn-tw{
@@ -116,8 +116,24 @@
     background-color:#55acee;
 }
 .btn-tw:hover{
-    color: #fff;
+    color: #fff !important;
     background-color:#59b5fa;
+}
+.btn-gh{
+	color: #fff;
+	background-color: #444;
+}
+.btn-gh:hover{
+	color: #fff !important;
+	background-color: lighten(#444, 10%);
+}
+.btn-gp{
+	color: #fff;
+	background-color: #DD4B39;
+}
+.btn-gp:hover{
+	color: #fff !important;
+	background-color: lighten(#DD4B39, 10%);
 }
 .navbar-right .dropdown .dropdown-toggle {
 	width: 100% !important;
