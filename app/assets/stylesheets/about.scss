@@ -29,6 +29,11 @@
             }
         }
     }
+    .form-group {
+        input.form-control, button.btn-primary {
+            margin-bottom: 30px;
+        }
+    }
     #about-content {
         h1,
         h2,
@@ -54,10 +59,12 @@
 
             max-width: 190px !important;
         }
-        article {
+        p {
             font-family: 'Raleway', Helvetica, sans-serif;
             font-size: 1.2em;
             line-height: 1.7;
+        }
+        article {
 
             max-width: 85% !important;
 

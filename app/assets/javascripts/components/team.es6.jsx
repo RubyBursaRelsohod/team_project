@@ -2,7 +2,7 @@ class Team extends React.Component {
   render () {
     return (
       <div>
-        Team placeholder
+        <p>Team placeholder</p>
       </div>
     );
   }
