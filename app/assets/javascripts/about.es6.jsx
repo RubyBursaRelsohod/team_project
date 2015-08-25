@@ -33,6 +33,10 @@ $(document).ready( () => {
                 React.render(<FAQ />, $aboutContent);
                 break;
 
+            case 'Our Team':
+                React.render(<Team />, $aboutContent);
+                break;
+
             default:
                 React.render(<Description />, $aboutContent);
                 break;
