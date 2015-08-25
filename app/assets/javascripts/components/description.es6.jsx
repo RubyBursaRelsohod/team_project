@@ -9,7 +9,9 @@ class Description extends React.Component {
           <h1>{desc.title}</h1>
         </div>
         <br />
-        <p>{desc.text}</p>
+        <article lang="en">
+          <p>{desc.text}</p>
+        </article>
       </div>
     );
   }

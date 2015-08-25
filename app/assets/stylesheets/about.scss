@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 .about-page {
     padding-top: 50px;
     .nav-sidebar {
@@ -34,32 +36,40 @@
         h4,
         h5,
         h6 {
+            font-family: 'Bitter', Garamond, Arial, serif;
             line-height: 1.7;
         }
         h1 {
+            font-family: 'Bitter', Garamond, Arial, serif;
+
             display: inline;
 
             margin-left: 20px;
 
             text-align: center;
-
-            letter-spacing: 0.2ch;
+            letter-spacing: .1ch;
         }
         img {
             display: inline;
 
             max-width: 190px !important;
         }
-        p {
+        article {
+            font-family: 'Raleway', Helvetica, sans-serif;
             font-size: 1.2em;
             line-height: 1.7;
 
-            // width: 900px !important;
-            max-width: 900px !important;
+            max-width: 85% !important;
 
+            text-align: justify;
             text-indent: 50px;
+            letter-spacing: .01ch;
+                word-break: normal;
+            -ms-word-break: normal;
+            -webkit-hyphens: auto;
+               -moz-hyphens: auto;
+                    hyphens: auto;
         }
-
         ul {
             list-style-type: none;
         }
