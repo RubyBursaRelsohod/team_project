@@ -13,4 +13,3 @@ class AboutPage extends React.Component {
     )
   }
 }
-

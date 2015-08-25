@@ -1,6 +1,6 @@
 const Сonsts = ( () => {
 
-    const sideNavbarItems = ['Welcome', 'FAQ', 'Dev Status', 'Our Team'];
+    const sideNavbarItems = ['Welcome', 'Dev Status', 'FAQ', 'Our Team'];
 
     const description = {
         title: 'Welcome to the Symphony Store!',
