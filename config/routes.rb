@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+  resources :about, only: [:index]
+
 end
