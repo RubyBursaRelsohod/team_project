@@ -30,9 +30,19 @@
         }
     }
     .form-group {
-        input.form-control, button.btn-primary {
+        input.form-control,
+        button.btn-primary {
             margin-bottom: 30px;
         }
+    }
+    .subarticle {
+        margin: 50px 0 50px 0;
+
+        text-indent: 50px;
+    }
+    .description hr {
+        width: 85%;
+        margin-left: 0;
     }
     #about-content {
         h1,
@@ -65,7 +75,6 @@
             line-height: 1.7;
         }
         article {
-
             max-width: 85% !important;
 
             text-align: justify;
@@ -80,5 +89,68 @@
         ul {
             list-style-type: none;
         }
+    }
+}
+.cd-top {
+    position: fixed;
+    bottom: 40px;
+    left: 10px;
+
+    display: inline-block;
+    visibility: hidden;
+    overflow: hidden;
+
+    width: 40px;
+    height: 40px;
+
+    -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+       -moz-transition: opacity .3s 0s, visibility 0s .3s;
+            transition: opacity .3s 0s, visibility 0s .3s;
+    white-space: nowrap;
+    text-indent: 100%;
+
+    opacity: 0;
+    background: rgba(232, 98, 86, .8) url(cd-top-arrow.svg) no-repeat center 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+    span {
+        position: fixed;
+        z-index: 9 !important;
+    }
+}
+.cd-top.cd-is-visible,
+.cd-top.cd-fade-out,
+.no-touch .cd-top:hover {
+    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+       -moz-transition: opacity .3s 0s, visibility 0s 0s;
+            transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+    /* the button becomes visible */
+    visibility: visible;
+
+    opacity: 1;
+}
+.cd-top.cd-fade-out {
+    /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+    opacity: .5;
+}
+
+.no-touch .cd-top:hover {
+    opacity: 1;
+    background-color: #e86256;
+}
+@media only screen and (min-width: 768px) {
+    .cd-top {
+        bottom: 20px;
+        left: 20px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .cd-top {
+        bottom: 30px;
+        left: 30px;
+
+        width: 60px;
+        height: 60px;
     }
 }
