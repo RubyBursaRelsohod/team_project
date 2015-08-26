@@ -15,7 +15,7 @@ class FAQ extends React.Component {
     });
 
     return (
-      <div className="col-sm-12">
+      <div className="container col-sm-12">
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="form-group col-sm-7">
             <input type="text" className="form-control" ref="username" />

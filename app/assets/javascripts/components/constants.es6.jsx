@@ -20,6 +20,49 @@ const Сonsts = ( () => {
         ]
     }
 
+    function _getUsers(usernames) {
+        let users = [];
+        usernames.forEach( (username) => {
+            let u = $.getJSON(`https://api.github.com/users/${username}`)
+                     .done( (data) => { u = data; });
+            users.push(u);
+        });
+        return users;
+    }
+
+    const team = [
+        {
+            username: 'Dioscur',
+            full_name: 'Tsivin Dmitriy',
+            github_link: 'https://github.com/Dioscur',
+            avatar_url: 'https://avatars.githubusercontent.com/u/11578659?v=3'
+        },
+        {
+            username: 'eovolkov',
+            full_name: 'Evgeniy Volkov',
+            github_link: 'https://github.com/eovolkov',
+            avatar_url: 'https://avatars.githubusercontent.com/u/9574617?v=3'
+        },
+        {
+            username: 'Serg1i',
+            full_name: 'Sergey Manannikov',
+            github_link: 'https://github.com/Serg1i',
+            avatar_url: 'https://avatars.githubusercontent.com/u/6352533?v=3'
+        },
+        {
+            username: 'AntonDp',
+            full_name: 'Anton Mukhin',
+            github_link: 'https://github.com/AntonDp',
+            avatar_url: 'https://avatars.githubusercontent.com/u/12658243?v=3'
+        },
+        {
+            username: 'yakovenkodenis',
+            full_name: 'Denis Yakovenko',
+            github_link: 'https://github.com/yakovenkodenis',
+            avatar_url: 'https://avatars.githubusercontent.com/u/8517673?v=3'
+        }
+    ];
+
     const mockQuestions = [
         {
             title: 'Question 1. How are you man?',
@@ -38,7 +81,9 @@ const Сonsts = ( () => {
     return {
         sideNavbarItems: sideNavbarItems,
         description: description,
-        questions: mockQuestions
+        questions: mockQuestions,
+        team: team,
+        getUsers: _getUsers
     }
 
 })();

@@ -69,8 +69,11 @@
 
             max-width: 190px !important;
         }
-        p {
+        p,
+        figcaption {
             font-family: 'Raleway', Helvetica, sans-serif;
+        }
+        p {
             font-size: 1.2em;
             line-height: 1.7;
         }
@@ -91,6 +94,80 @@
         }
     }
 }
+
+.col-centered {
+    display: block !important;
+
+    margin-right: auto !important;
+    margin-left: auto !important;
+
+    text-align: center !important;
+}
+
+.dev-page {
+    h1 {
+        font-size: 3em !important;
+
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 50px !important;
+    }
+}
+
+.dev-avatar {
+    display: inline-block;
+    float: none;
+
+    margin: 0 auto !important;
+    padding: 20px 30px !important;
+
+    cursor: pointer;
+    -webkit-transition: .3s all ease-in-out;
+       -moz-transition: .3s all ease-in-out;
+        -ms-transition: .3s all ease-in-out;
+         -o-transition: .3s all ease-in-out;
+            transition: .3s all ease-in-out;
+    &:hover {
+        img {
+            opacity: .8;
+        }
+        figcaption {
+            letter-spacing: .03ch !important;
+            font-size: 1.02em;
+
+            opacity: 1;
+        }
+    }
+    img {
+        width: 250px;
+        min-width: 200px;
+        min-height: 200px;
+
+        -webkit-transition: .3s all ease-in-out;
+           -moz-transition: .3s all ease-in-out;
+            -ms-transition: .3s all ease-in-out;
+             -o-transition: .3s all ease-in-out;
+                transition: .3s all ease-in-out;
+        text-align: center;
+
+        border: inset 5px solid #999;
+        -webkit-border-radius: 50%;
+                border-radius: 50%;
+    }
+    figcaption {
+        margin-left: 15px !important;
+        padding: 5px 20px !important;
+
+        -webkit-transition: .3s all ease-in-out;
+           -moz-transition: .3s all ease-in-out;
+            -ms-transition: .3s all ease-in-out;
+             -o-transition: .3s all ease-in-out;
+                transition: .3s all ease-in-out;
+        text-align: center;
+    }
+}
+
+
 .cd-top {
     position: fixed;
     bottom: 40px;

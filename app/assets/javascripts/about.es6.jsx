@@ -1,4 +1,3 @@
-//= require_tree ./components
 
 $(document).ready( () => {
 
@@ -10,7 +9,8 @@ $(document).ready( () => {
     let $aboutContent = $aboutPage.find('#about-content')[0];
 
     // Initial content load
-    React.render(<Description />, $aboutContent);
+    // React.render(<Description />, $aboutContent);
+    React.render(<Team members={Сonsts.getUsers(Сonsts.team)}/>, $aboutContent);
 
     let $navItems = $aboutPage.find('#about-nav > li.nav-list-item a');
 
@@ -18,7 +18,6 @@ $(document).ready( () => {
     $navItems.click(handleNavItemClick)
 
     function handleNavItemClick() {
-        $aboutContent.innerHTML = '';
 
         switch(this.innerHTML) {
             case 'Welcome':
@@ -34,7 +33,8 @@ $(document).ready( () => {
                 break;
 
             case 'Our Team':
-                React.render(<Team />, $aboutContent);
+                React.render(<Team
+                    members={Сonsts.getUsers(Сonsts.team)} />, $aboutContent);
                 break;
 
             default:
