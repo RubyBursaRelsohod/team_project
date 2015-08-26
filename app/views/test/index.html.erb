@@ -1,18 +1,66 @@
-<div class="jumbotron">
-	<h2>This is a temporary main page and it will be removed soon.</h2>
-	<hr>
-	<br><h4>Below are some links to navigate around the shop:</h4><br>
-	<%= link_to 'Saxophones', saxophones_path %>
-	<br>
-	<%= link_to 'Pianos', pianos_path %>
-	<br>
-	<%= link_to 'Guitars', guitars_path %>
-	<br>
-	<%= link_to 'Violins', violins_path %>
-	<br><hr>
-	<%= link_to 'About Page', about_index_path %>
-	<hr><br>
-	<% if user_signed_in? %>
-		<%= link_to 'Edit User', edit_user_registration_path %>
-	<% end %>
+<!-- <div class="jumbotron">
+    <h2>This is a temporary main page and it will be removed soon.</h2>
+    <hr>
+    <br><h4>Below are some links to navigate around the shop:</h4><br>
+    <%= link_to 'Saxophones', saxophones_path %>
+    <br>
+    <%= link_to 'Pianos', pianos_path %>
+    <br>
+    <%= link_to 'Guitars', guitars_path %>
+    <br>
+    <%= link_to 'Violins', violins_path %>
+    <br><hr>
+    <%= link_to 'About Page', about_index_path %>
+    <hr><br>
+    <% if user_signed_in? %>
+        <%= link_to 'Edit User', edit_user_registration_path %>
+    <% end %>
+</div> -->
+
+<div class="main-page">
+    <%= link_to root_path, class: 'main-brand-name' do %>
+        <h1 class="page-header text-center">Symphony Store</h1>
+    <% end %>
+    <h4 class="text-center">Choose your category below</h4>
+
+    <div class="instrument-row col-sm-offset-2">
+        <div class="col-sm-6 col-centered">
+            <figure>
+                <%= link_to saxophones_path do %>
+                    <%= image_tag 'saxophone.jpg' %>
+                <% end %>
+                <figcaption class="text-center col-sm-offset-4">
+                    Saxophones
+                </figcaption>
+            </figure>
+            <figure>
+                <%= link_to violins_path do %>
+                    <%= image_tag "violin.png" %>
+                <% end %>
+                <figcaption class="text-center col-sm-offset-4">
+                    Violins
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="instrument-row col-sm-offset-2">
+        <div class="col-sm-6 col-centered">
+            <figure>
+                <%= link_to guitars_path do %>
+                    <%= image_tag 'guitar.jpg' %>
+                <% end %>
+                <figcaption class="text-center col-sm-offset-4">
+                    Guitars
+                </figcaption>
+            </figure>
+            <figure>
+                <%= link_to pianos_path do %>
+                    <%= image_tag "piano.jpg" %>
+                <% end %>
+                <figcaption class="text-center col-sm-offset-4">
+                    Pianos
+                </figcaption>
+            </figure>
+        </div>
+    </div>
 </div>

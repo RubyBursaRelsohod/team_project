@@ -9,8 +9,8 @@ class IssuesList extends React.Component {
       return (
         <a key={index} className="list-group-item"
            href={item.html_url} target="_blank">
-          <strong>{item.title + "."}</strong> {"\t\t\t\t\tClosed at "}
-          {item.closed_at ? item.closed_at.replace(/T|Z/, ' ').slice(0, -1) : ''}
+          <strong>{item.title + "."}</strong>
+          {item.closed_at ? "\t\t\t\t\tClosed at " + item.closed_at.replace(/T|Z/, ' ').slice(0, -1) : ''}
         </a>
       );
     });

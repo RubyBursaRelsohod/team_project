@@ -1,0 +1,70 @@
+.main-page {
+    .main-brand-name {
+        text-decoration: none;
+
+        color: #333;
+    }
+    h4 {
+        margin-top: -25px !important;
+        margin-bottom: 50px !important;
+    }
+    h1.page-header {
+        margin-top: -10px !important;
+        margin-bottom: 100px !important;
+
+        cursor: pointer;
+        -webkit-transition: all .5s ease-in-out;
+           -moz-transition: all .5s ease-in-out;
+            -ms-transition: all .5s ease-in-out;
+             -o-transition: all .5s ease-in-out;
+                transition: all .5s ease-in-out;
+        &:hover {
+            letter-spacing: .5ch;
+        }
+    }
+    .instrument-row {
+        img {
+            position: relative;
+
+            display: inline-block !important;
+            float: left;
+
+            width: 300px;
+            height: 300px !important;
+
+            -webkit-transition: all .3s ease-in-out;
+               -moz-transition: all .3s ease-in-out;
+                -ms-transition: all .3s ease-in-out;
+                 -o-transition: all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
+
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+                 -o-background-size: cover;
+                    background-size: cover;
+        }
+        figcaption {
+            font-size: 1.2em !important;
+        }
+        figure {
+            display: block !important;
+
+            width: 50% !important;
+            margin: 15px 10px !important;
+            margin-bottom: 80px !important;
+
+            -webkit-transition: all .3s ease;
+               -moz-transition: all .3s ease;
+                -ms-transition: all .3s ease;
+                 -o-transition: all .3s ease;
+                    transition: all .3s ease;
+            &:hover {
+                letter-spacing: .3ch;
+                img {
+                    opacity: .9;
+                }
+            }
+        }
+    }
+}
