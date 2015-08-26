@@ -29,34 +29,35 @@ class DevStatus extends React.Component {
   }
 
   onBackendResponse(data) {
-    console.log('onBackendResponse');
     this.issues = data;
-    this.setState({ issues: data });
+    this.setState({ issues: this.getClosedIssues(data) });
   }
 
   onChangeRadioButton(e) {
-    console.log('onChangeRadioButton')
-    console.log(e.target.id);
+    let issues = this.issues;
     switch(e.target.id) {
       case this.OPEN_ISSUE_ID:
-        console.log(this.OPEN_ISSUE_ID);
-        this.setState({ issues: this.getOpenedIssues(this.issues) });
+        this.setState({ issues: this.getOpenedIssues(issues) });
         break;
       case this.CLOSED_ISSUE_ID:
-        console.log(this.CLOSED_ISSUE_ID);
-        this.setState({ issues: this.getClosedIssues(this.issues) });
+        this.setState({ issues: this.getClosedIssues(issues) });
         break;
     }
   }
 
   getClosedIssues(issues) {
-    console.log('filter closed');
-    return issues.filter((issue) => { issue.state === 'open' });
+    if(!this.closed)
+      this.closed = $.map(issues, (val,key) =>
+        { if(val.state == 'closed') return val; });
+    return this.closed;
+
   }
 
   getOpenedIssues(issues) {
-    console.log('filter opened');
-    return issues.filter((issue) => { issue.state === 'closed' });
+    if(!this.open)
+      this.open = $.map(issues, (val,key) =>
+        { if(val.state == 'open') return val; });
+    return this.open;
   }
 
           // <img
@@ -67,6 +68,9 @@ class DevStatus extends React.Component {
     return (
       <div className="dev-status-page col-centered">
         <div className="graphs">
+          <h1 className="text-center page-header">
+            Our Recent Closed and Opened Issues from GitHub
+          </h1>
         </div>
         <div className="issues col-centered">
           <div className="btn-group" data-toggle="buttons">
