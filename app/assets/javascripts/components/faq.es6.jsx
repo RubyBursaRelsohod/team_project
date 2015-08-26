@@ -66,7 +66,6 @@ class FAQ extends React.Component {
 
     if (searchString.length) {
       questions = questions.filter( (q) => {
-        // return q.question.toLowerCase().match(new RegExp(searchString, 'i'));
         return this.anyMatchInQuery(q.question.toLowerCase(), searchString);
       });
     }
