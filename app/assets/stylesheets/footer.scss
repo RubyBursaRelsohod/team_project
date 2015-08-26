@@ -1,6 +1,9 @@
 
 footer.bottom-footer {
     position: relative;
+    clear: both !important;
+    z-index: 999999 !important;
+    bottom: 0 !important;
 
     width: 100% !important;
     margin-top: 20px !important;
