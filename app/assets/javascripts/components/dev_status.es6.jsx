@@ -8,10 +8,7 @@ class DevStatus extends React.Component {
     this.CLOSED_ISSUE_ID = 'closed_issue_r';
     this.OPEN_ISSUE_ID = 'open_issue_r';
   }
-    // $.getJSON('https://api.github.com/repos/RubyBursaRelsohod/team_project/issues?state=all&filter=all')
-    //               .done( (data) => { this.props.onNewData(data); } );
-    // $.getJSON('https://api.github.com/repos/RubyBursaRelsohod/team_project/issues?state=all&filter=all',
-    //   callback);
+
   getIssues(p_url, p_data, cbSuccess) {
     console.log('getIssues');
     let request = $.ajax({
@@ -60,10 +57,6 @@ class DevStatus extends React.Component {
     return this.open;
   }
 
-          // <img
-          //     src='https://graphs.waffle.io/RubyBursaRelsohod/team_project/throughput.svg'
-          //     alt='throughput graph'
-          //     className="throughput-graph" />
   render() {
     return (
       <div className="dev-status-page col-centered">

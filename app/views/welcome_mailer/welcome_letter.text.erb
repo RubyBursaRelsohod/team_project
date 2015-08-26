@@ -1,4 +1,4 @@
-    Dear <%= @user.first_name.capitalize %>, we are happy to have you with us, at Symphony Online Store!
+    Dear <%= Translit.convert(@user.first_name.capitalize) %>, we are happy to have you with us, at Symphony Online Store!
 
 You now have become a valued member of our clients community and a customer of the store which offers the finest musical instruments varying from violins and guitars to saxophones and grand pianos. We - the Symphony team - will do everything possible in order to deliver you you the best experience in musical on-line shopping, so now make sure you're comfortable on your seat and visit our About Page, which contains all the information you might need.
 
