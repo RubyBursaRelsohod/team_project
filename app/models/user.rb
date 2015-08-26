@@ -69,4 +69,8 @@ class User < ActiveRecord::Base
   def role_symbols
     (roles || []).map { |r| r.title.to_sym }
   end
+
+  def after_confirmation
+    WelcomeMailer.welcome_letter(self).deliver
+  end
 end
