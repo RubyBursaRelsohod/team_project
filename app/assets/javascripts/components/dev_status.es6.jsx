@@ -64,7 +64,6 @@ class DevStatus extends React.Component {
           //     alt='throughput graph'
           //     className="throughput-graph" />
   render() {
-    // console.log(this.issues);
     return (
       <div className="dev-status-page col-centered">
         <div className="graphs">
