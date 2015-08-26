@@ -10,6 +10,7 @@ footer.bottom-footer {
     margin-bottom: 20px !important;
     hr {
         margin-top: 150px !important;
+        z-index: 99999999 !important;
     }
     .brand-name {
         font-family: 'Bitter', serif;

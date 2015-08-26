@@ -36,6 +36,29 @@ class FAQ extends React.Component {
     console.log('submit event fired.');
   }
 
+  searchStringInArray(str, strArray) {
+    for (let i = 0; i < strArray.length; ++i) {
+      if(strArray[i].match(str))
+        return true;
+    }
+    return false;
+  }
+
+  anyMatchInQuery(question, query) {
+    let questionArr = question.split(/\s|\,|\.|\!|\?|\:\;/i);
+    let queryArr = query.split(/\s|\,|\.|\!|\?|\:\;/i);
+
+    let found = false;
+    for (let i = 0; i < queryArr.length; ++i) {
+      if( (questionArr.indexOf(queryArr[i]) > -1) ||
+          (this.searchStringInArray(queryArr[i], questionArr)) ) {
+        found = true;
+        break;
+      }
+    }
+    return found;
+  }
+
   render() {
     // const mock = Сonsts.questions;
     let searchString = this.state.searchString.trim().toLowerCase();
@@ -43,7 +66,8 @@ class FAQ extends React.Component {
 
     if (searchString.length) {
       questions = questions.filter( (q) => {
-        return q.question.toLowerCase().match(searchString);
+        // return q.question.toLowerCase().match(new RegExp(searchString, 'i'));
+        return this.anyMatchInQuery(q.question.toLowerCase(), searchString);
       });
     }
 
