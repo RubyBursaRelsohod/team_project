@@ -45,4 +45,9 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
   config.action_mailer.delivery_method :smtp
 
+  config.react.variant = :development
+  config.react.jsx_transform_options = {
+    blacklist: ['validation.react']
+  }
+  config.react.addons =  true
 end

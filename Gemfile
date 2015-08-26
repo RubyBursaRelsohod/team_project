@@ -37,6 +37,10 @@ gem 'quiet_assets', group: :development
 gem 'annotate', '~> 2.6.6'
 gem 'rateaux'
 
+gem 'react-rails'
+gem 'sprockets', '>= 3.0.0'
+gem 'sprockets-es6'
+
 gem 'kaminari'
 gem 'declarative_authorization', github: 'stffn/declarative_authorization'
 gem 'paperclip', '~> 4.3'

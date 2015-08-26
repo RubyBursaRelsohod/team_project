@@ -104,4 +104,6 @@ Rails.application.configure do
       authentication: "login"
   }
 
+  config.react.variant = :production
+  config.react.addons = true
 end

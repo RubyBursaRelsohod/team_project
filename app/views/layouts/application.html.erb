@@ -8,17 +8,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= yield(:head) %>
   <%= render 'layouts/header' %>
   <div class="container">
 
+    <% messages = [] %>
     <% flash.each do |type, message| %>
-      <div class="alert alert-info fade-in">
-        <button class="close" data-dismiss="alert">x</button>
-        <%= message %>
-      </div>
+        <% messages << message %>
     <% end %>
+    <%= notify('success', messages, 'top-right', '4000') %>
 
     <%= yield %>
+
+    <%= render 'layouts/footer' %>
+
   </div>
 </body>
 </html>
