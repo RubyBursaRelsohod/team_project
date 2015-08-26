@@ -178,16 +178,10 @@
         min-height: 200px !important;
     }
     .list-group {
+        font-size: 1.2em;
+        font-family: 'Raleway', sans-serif;
         margin-top: 30px;
-    }
-    .issues .btn-group .btn {
-        .list-group {
-            display: none;
-        }
-        &.active {
-            .list-group {
-                display: block;
-            }
-        }
+        width: 85% !important;
+        text-align: left !important;
     }
 }

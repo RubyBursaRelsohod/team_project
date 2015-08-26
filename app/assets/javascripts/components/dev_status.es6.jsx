@@ -38,11 +38,13 @@ class DevStatus extends React.Component {
     console.log('onChangeRadioButton')
     console.log(e.target.id);
     switch(e.target.id) {
-      case OPEN_ISSUE_ID:
-        this.setState({ issues: this.getOpenedIssues(this.issues).bind(this) });
+      case this.OPEN_ISSUE_ID:
+        console.log(this.OPEN_ISSUE_ID);
+        this.setState({ issues: this.getOpenedIssues(this.issues) });
         break;
-      case CLOSED_ISSUE_ID:
-        this.setState({ issues: this.getClosedIssues(this.issues).bind(this) });
+      case this.CLOSED_ISSUE_ID:
+        console.log(this.CLOSED_ISSUE_ID);
+        this.setState({ issues: this.getClosedIssues(this.issues) });
         break;
     }
   }
@@ -57,26 +59,33 @@ class DevStatus extends React.Component {
     return issues.filter((issue) => { issue.state === 'closed' });
   }
 
+          // <img
+          //     src='https://graphs.waffle.io/RubyBursaRelsohod/team_project/throughput.svg'
+          //     alt='throughput graph'
+          //     className="throughput-graph" />
   render() {
     // console.log(this.issues);
     return (
       <div className="dev-status-page col-centered">
         <div className="graphs">
-          <img
-              src='https://graphs.waffle.io/RubyBursaRelsohod/team_project/throughput.svg'
-              alt='throughput graph'
-              className="throughput-graph" />
         </div>
         <div className="issues col-centered">
           <div className="btn-group" data-toggle="buttons">
-            <label className="btn btn-primary active">
-              <input type="radio" name="options" id={this.CLOSED_ISSUE_ID}
-                     autoComplete="off" onChange={this.onChangeRadioButton.bind(this)}/> Closed Issues
+
+            <label className="btn btn-primary active"
+                   onClick={this.onChangeRadioButton.bind(this)}
+                   id={this.CLOSED_ISSUE_ID}>
+              <input type="radio" name="options"
+                     autoComplete="off" /> Closed Issues
             </label>
-            <label className="btn btn-primary">
-              <input type="radio" name="options" id={this.OPEN_ISSUE_ID}
-                     autoComplete="off" onChange={this.onChangeRadioButton.bind(this)} /> Open Issues
+
+            <label className="btn btn-primary"
+                   onClick={this.onChangeRadioButton.bind(this)}
+                   id={this.OPEN_ISSUE_ID}>
+              <input type="radio" name="options"
+                     autoComplete="off" /> Open Issues
             </label>
+
           </div>
           <IssuesList issues={this.state.issues} />
         </div>

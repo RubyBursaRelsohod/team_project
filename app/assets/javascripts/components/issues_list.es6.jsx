@@ -16,7 +16,7 @@ class IssuesList extends React.Component {
     });
 
     return (
-      <div className="list-group">
+      <div className="list-group col-md-offset-1">
         {issues}
       </div>
     );
