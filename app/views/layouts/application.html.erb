@@ -16,11 +16,11 @@
     <% flash.each do |type, message| %>
         <% messages << message %>
     <% end %>
-    <%= notify('success', messages, 'top-right', '4000') %>
+    <%= notify('success', messages, 'bottom-left', '4000') %>
 
     <%= yield %>
 
-    <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' unless @disable_footer %>
 
   </div>
 </body>

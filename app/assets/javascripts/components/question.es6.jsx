@@ -2,7 +2,7 @@ class Question extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="question-block">
         <div><h3>{this.props.title}</h3></div>
         <div><p>{this.props.text}</p></div>
       </div>
@@ -11,6 +11,6 @@ class Question extends React.Component {
 }
 
 Question.propTypes = {
-  title: React.PropTypes.string.isRequired,
-  text: React.PropTypes.string.isRequired
+  title: React.PropTypes.string,
+  text: React.PropTypes.string
 };

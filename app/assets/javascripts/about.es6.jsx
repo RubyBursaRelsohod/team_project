@@ -9,8 +9,7 @@ $(document).ready( () => {
     let $aboutContent = $aboutPage.find('#about-content')[0];
 
     // Initial content load
-    // React.render(<Description />, $aboutContent);
-    React.render(<DevStatus />, $aboutContent);
+    React.render(<FAQ />, $aboutContent);
 
     let $navItems = $aboutPage.find('#about-nav > li.nav-list-item a');
 

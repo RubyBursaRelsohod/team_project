@@ -38,6 +38,10 @@ class ApplicationController < ActionController::Base
     }
   end
 
+  def disable_footer
+    @disable_footer = true
+  end
+
   private
 
   def after_update_path_for(*)

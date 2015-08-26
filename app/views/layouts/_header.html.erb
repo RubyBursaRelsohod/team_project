@@ -97,6 +97,7 @@
     <%- if user_signed_in? %>
 
       <ul class="nav navbar-nav navbar-right">
+        <li class="about-link"><%= link_to 'About', about_index_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= gravatar_tag current_user.email, size: 30, secure: true, html: { class: 'small-gravatar'} %>      <%= current_user.full_name %> (₴560000)<span class="glyphicon glyphicon-chevron-down"></span></a>
             <ul class="dropdown-menu">
@@ -133,8 +134,9 @@
     <% else %>
     <!-- LOGIN START -->
       <ul class="nav navbar-nav navbar-right">
+        <li class="about-link"><%= link_to 'About', about_index_path %></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="glyphicon glyphicon-chevron-down"></span></a>
+          <a href="#" class="dropdown-toggle not-signed-in" data-toggle="dropdown"><b>Login</b> <span class="glyphicon glyphicon-chevron-down"></span></a>
           <ul id="login-dp" class="dropdown-menu">
             <li>
                <div class="row">
