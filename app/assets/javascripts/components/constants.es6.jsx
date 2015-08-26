@@ -30,6 +30,12 @@ const Сonsts = ( () => {
         return users;
     }
 
+    function _getIssues() {
+        let issues = $.getJSON('https://api.github.com/repos/RubyBursaRelsohod/team_project/issues?state=all&filter=all')
+                      .done( (data) => { issues = data } );
+        return issues;
+    }
+
     const team = [
         {
             username: 'Dioscur',
@@ -83,7 +89,8 @@ const Сonsts = ( () => {
         description: description,
         questions: mockQuestions,
         team: team,
-        getUsers: _getUsers
+        getUsers: _getUsers,
+        getIssues: _getIssues
     }
 
 })();

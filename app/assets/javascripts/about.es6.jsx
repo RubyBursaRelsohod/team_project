@@ -10,7 +10,7 @@ $(document).ready( () => {
 
     // Initial content load
     // React.render(<Description />, $aboutContent);
-    React.render(<Team members={Сonsts.getUsers(Сonsts.team)}/>, $aboutContent);
+    React.render(<DevStatus />, $aboutContent);
 
     let $navItems = $aboutPage.find('#about-nav > li.nav-list-item a');
 

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'profile/index'
+  get 'questions/index'
 
   devise_for :users, controllers: { registrations: 'registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -19,4 +20,5 @@ Rails.application.routes.draw do
 
   resources :about, only: [:index]
 
+  resources :products, only: [:show]
 end

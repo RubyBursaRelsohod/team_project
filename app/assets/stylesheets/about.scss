@@ -71,6 +71,8 @@
             max-width: 190px !important;
         }
         p,
+        label,
+        input,
         figcaption {
             font-family: 'Raleway', Helvetica, sans-serif;
         }
@@ -133,8 +135,9 @@
             opacity: .8;
         }
         figcaption {
-            letter-spacing: .03ch !important;
             font-size: 1.02em;
+
+            letter-spacing: .03ch !important;
 
             opacity: 1;
         }
@@ -165,5 +168,26 @@
              -o-transition: .3s all ease-in-out;
                 transition: .3s all ease-in-out;
         text-align: center;
+    }
+}
+
+
+.dev-status-page {
+    .throughput-graph {
+        min-width: 200px !important;
+        min-height: 200px !important;
+    }
+    .list-group {
+        margin-top: 30px;
+    }
+    .issues .btn-group .btn {
+        .list-group {
+            display: none;
+        }
+        &.active {
+            .list-group {
+                display: block;
+            }
+        }
     }
 }

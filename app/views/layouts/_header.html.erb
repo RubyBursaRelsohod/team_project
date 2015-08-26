@@ -28,42 +28,55 @@
                   </div><!-- End Carousel Inner -->
                 </div><!-- /.carousel -->
                 <li class="divider"></li>
-                <li><a href="#">View all Instruments <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+<!--                 <li><a href="#">View all Instruments <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li> -->
+                <li>
+                  <%= link_to root_path do %>
+                    View all Instruments <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                  <% end %>
+                </li>
               </ul>
             </li>
             <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header">Violins</li>
                 <% @instruments[:violins][0...4].each do |v| %>
-                  <li><a href="#"><%= v.company %></a></li>
+                  <li>
+                    <%= link_to v.company, violins_path %>
+                  </li>
                 <% end %>
                 <li class="divider"></li>
                 <li class="dropdown-header">Pianos</li>
                 <% @instruments[:pianos][0...4].each do |p| %>
-                  <li><a href="#"><%= p.company %></a></li>
+                  <li>
+                    <%= link_to p.company, pianos_path %>
+                  </li>
                 <% end %>
               </ul>
             </li>
             <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header">Guitars</li>
-                <% @instruments[:guitars][0...4].each do |p| %>
-                  <li><a href="#"><%= p.company %></a></li>
+                <% @instruments[:guitars][0...4].each do |g| %>
+                  <li>
+                    <%= link_to g.company, guitars_path %>
+                  </li>
                 <% end %>
                 <li class="divider"></li>
                 <li class="dropdown-header">Saxophones</li>
-                <% @instruments[:saxophones][0...4].each do |p| %>
-                  <li><a href="#"><%= p.company %></a></li>
+                <% @instruments[:saxophones][0...4].each do |s| %>
+                  <li>
+                    <%= link_to s.company, saxophones_path %>
+                  </li>
                 <% end %>
               </ul>
             </li>
             <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header">Support</li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Delivery Info</a></li>
-                <li><a href="#">FAQ &amp; Help</a></li>
-                <li><a href="#">Contacts</a></li>
+                <li><%= link_to 'About', about_index_path %></li>
+                <li><%= link_to 'Delivery Info', about_index_path %></li>
+                <li><%= link_to 'FAQ & Help', about_index_path %></li>
+                <li><%= link_to 'Contacts', about_index_path %></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Newsletter</li>
                 <form class="form" role="form">
