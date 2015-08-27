@@ -31,6 +31,7 @@ class DevStatus extends React.Component {
     let issues = data;
     let closed = this.getClosedIssues(issues);;
     let open = this.getOpenedIssues(issues);
+    localStorage.clear();
 
     localStorage.closed_issues = JSON.stringify(closed);
     localStorage.open_issues = JSON.stringify(open);
@@ -41,7 +42,6 @@ class DevStatus extends React.Component {
   }
 
   onChangeRadioButton(e) {
-    // let issues = this.issues;
     switch(e.target.id) {
       case this.OPEN_ISSUE_ID:
         this.setState({ issues: JSON.parse(localStorage.open_issues) });
