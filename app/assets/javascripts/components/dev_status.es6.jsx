@@ -7,6 +7,8 @@ class DevStatus extends React.Component {
     };
     this.CLOSED_ISSUE_ID = 'closed_issue_r';
     this.OPEN_ISSUE_ID = 'open_issue_r';
+    this.CLOSED_ISSUE_INPT_ID = 'closed_issue_inpt';
+    this.OPEN_ISSUE_INPT_ID = 'open_issue_inpt';
   }
 
   getIssues(p_url, p_data, cbSuccess) {
@@ -26,35 +28,49 @@ class DevStatus extends React.Component {
   }
 
   onBackendResponse(data) {
-    this.issues = data;
-    this.setState({ issues: this.getClosedIssues(data) });
+    let issues = data;
+    let closed = this.getClosedIssues(issues);;
+    let open = this.getOpenedIssues(issues);
+
+    localStorage.closed_issues = JSON.stringify(closed);
+    localStorage.open_issues = JSON.stringify(open);
+    this.setState({ issues: closed });
+    closed = null;
+    open = null;
+    issues = null;
   }
 
   onChangeRadioButton(e) {
-    let issues = this.issues;
+    // let issues = this.issues;
     switch(e.target.id) {
       case this.OPEN_ISSUE_ID:
-        this.setState({ issues: this.getOpenedIssues(issues) });
+        this.setState({ issues: JSON.parse(localStorage.open_issues) });
         break;
       case this.CLOSED_ISSUE_ID:
-        this.setState({ issues: this.getClosedIssues(issues) });
+        this.setState({ issues: JSON.parse(localStorage.closed_issues) });
+        break;
+    }
+  }
+
+  onInputChange(e) {
+    switch(e.target.id) {
+      case this.OPEN_ISSUE_INPT_ID:
+        this.setState({ issues: JSON.parse(localStorage.open_issues) });
+        break;
+      case this.CLOSED_ISSUE_INPT_ID:
+        this.setState({ issues: JSON.parse(localStorage.closed_issues) });
         break;
     }
   }
 
   getClosedIssues(issues) {
-    if(!this.closed)
-      this.closed = $.map(issues, (val,key) =>
+    return $.map(issues, (val,key) =>
         { if(val.state == 'closed') return val; });
-    return this.closed;
-
   }
 
   getOpenedIssues(issues) {
-    if(!this.open)
-      this.open = $.map(issues, (val,key) =>
+    return $.map(issues, (val,key) =>
         { if(val.state == 'open') return val; });
-    return this.open;
   }
 
   render() {
@@ -72,14 +88,18 @@ class DevStatus extends React.Component {
                    onClick={this.onChangeRadioButton.bind(this)}
                    id={this.CLOSED_ISSUE_ID}>
               <input type="radio" name="options"
-                     autoComplete="off" /> Closed Issues
+                     autoComplete="off"
+                     id={this.CLOSED_ISSUE_INPT_ID}
+                     onChange={this.onInputChange.bind(this)} /> Closed Issues
             </label>
 
             <label className="btn btn-primary"
                    onClick={this.onChangeRadioButton.bind(this)}
                    id={this.OPEN_ISSUE_ID}>
               <input type="radio" name="options"
-                     autoComplete="off" /> Open Issues
+                     autoComplete="off"
+                     id={this.OPENED_ISSUE_INPT_ID}
+                     onChange={this.onInputChange.bind(this)} /> Open Issues
             </label>
 
           </div>
