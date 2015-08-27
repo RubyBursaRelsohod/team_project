@@ -4,6 +4,6 @@ class WelcomeMailer < ApplicationMailer
   def welcome_letter(user)
     @user = user
     mail to: user.email,
-         subject: "Symphony loves #{Translit.convert(user.first_name.capitalize)}!"
+         subject: "Symphony loves #{Translit.convert(user.first_name.capitalize, :english)}!"
   end
 end
