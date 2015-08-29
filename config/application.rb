@@ -35,6 +35,8 @@ module RubyBursaTeamProject
     # "*.{rb,yml}").to_s]
     # config.i18n.default_locale = :de
 
+    config.middleware.use Rack::Deflater
+
     config.autoload_paths += %W(#{config.root}/lib)
 
     # Do not swallow errors in after_commit/after_rollback callbacks.

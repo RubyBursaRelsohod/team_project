@@ -180,6 +180,10 @@ GEM
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
+    heroku_rails_deflate (1.0.3)
+      actionpack (>= 3.2.13)
+      activesupport (>= 3.2.13)
+      rack (>= 1.4.5)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     i18n_data (0.7.0)
@@ -375,6 +379,8 @@ GEM
     sprockets-es6 (0.7.0)
       babel-transpiler
       sprockets (>= 3.0.0)
+    sprockets-image_compressor (0.3.0)
+      sprockets
     sprockets-rails (2.3.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -432,6 +438,7 @@ DEPENDENCIES
   guard
   guard-livereload
   guard-rspec
+  heroku_rails_deflate
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
@@ -455,6 +462,7 @@ DEPENDENCIES
   spring
   sprockets (>= 3.0.0)
   sprockets-es6
+  sprockets-image_compressor
   table_print
   toastr-rails (~> 1.0.3)
   translit
