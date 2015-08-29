@@ -3,7 +3,7 @@ class ViolinsController < ApplicationController
     @violins = Product.every(:Violin)
                .order('id')
                .page(params[:page])
-               .per(10)
+               .per(12)
 
     respond_to do |format|
       format.html

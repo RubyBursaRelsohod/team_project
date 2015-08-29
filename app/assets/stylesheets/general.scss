@@ -2,10 +2,46 @@
 // @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 * {
-  -webkit-box-sizing: border-box !important;
-  -moz-box-sizing: border-box !important;
-  box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
+       -moz-box-sizing: border-box !important;
+            box-sizing: border-box !important;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Bitter', Garamond, Arial, serif !important;
+    line-height: 1.7 !important;
+}
+h1 {
+    font-family: 'Bitter', Garamond, Arial, serif !important;
+
+    letter-spacing: .1ch !important;
+}
+
+p,
+div,
+label,
+input,
+figcaption,
+article,
+section {
+    font-family: 'Raleway', Helvetica, sans-serif !important;
+}
+p {
+    font-size: 1.2em;
+    line-height: 1.7;
+}
+article,
+section,
+p {
+    text-indent: 50px !important;
+    letter-spacing: .01ch !important;
+}
+
 
 body {
     overflow-y: scroll !important;
@@ -40,44 +76,48 @@ body {
 .cd-top.cd-is-visible,
 .cd-top.cd-fade-out,
 .no-touch .cd-top:hover {
+    z-index: 0 !important;
+
     -webkit-transition: opacity .3s 0s, visibility 0s 0s;
        -moz-transition: opacity .3s 0s, visibility 0s 0s;
             transition: opacity .3s 0s, visibility 0s 0s;
-    z-index: 0 !important;
 }
 .cd-top.cd-is-visible {
+    z-index: 0 !important;
     /* the button becomes visible */
+
     visibility: visible;
 
     opacity: 1;
-    z-index: 0 !important;
 }
 .cd-top.cd-fade-out {
-    /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
-    opacity: .5;
     z-index: 0 !important;
+    /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+
+    opacity: .5;
 }
 
 .no-touch .cd-top:hover {
+    z-index: 0 !important;
+
     opacity: 1;
     background-color: #e86256;
-    z-index: 0 !important;
 }
 @media only screen and (min-width: 768px) {
     .cd-top {
+        z-index: 0 !important;
         bottom: 20px;
         left: 20px;
-        z-index: 0 !important;
     }
 }
 @media only screen and (min-width: 1024px) {
     .cd-top {
+        z-index: 0 !important;
         bottom: 30px;
         left: 30px;
 
         width: 60px;
         height: 60px;
-        z-index: 0 !important;
     }
 }
 
