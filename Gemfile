@@ -26,7 +26,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Heroku deployment gem
 group :production do
   gem 'rails_12factor'
+  gem 'heroku_rails_deflate'
 end
+
+gem 'sprockets-image_compressor'
 
 gem 'simple_form'
 gem 'devise', '~> 3.5.1'
