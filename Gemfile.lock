@@ -76,6 +76,9 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.2)
+    auto_html (1.6.4)
+      redcarpet (~> 3.1)
+      rinku (~> 1.5.0)
     aws-sdk (1.64.0)
       aws-sdk-v1 (= 1.64.0)
     aws-sdk-v1 (1.64.0)
@@ -180,9 +183,7 @@ GEM
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
-    heroku_rails_deflate (1.0.3)
-      actionpack (>= 3.2.13)
-      activesupport (>= 3.2.13)
+    heroku-deflater (0.5.3)
       rack (>= 1.4.5)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
@@ -318,8 +319,10 @@ GEM
       execjs
       rails (>= 3.2)
       tilt
+    redcarpet (3.3.2)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rinku (1.5.1)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -420,6 +423,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   annotate (~> 2.6.6)
+  auto_html
   aws-sdk (~> 1.6)
   bcrypt (~> 3.1.7)
   better_errors
@@ -438,7 +442,7 @@ DEPENDENCIES
   guard
   guard-livereload
   guard-rspec
-  heroku_rails_deflate
+  heroku-deflater
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
