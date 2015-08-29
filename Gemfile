@@ -28,8 +28,6 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'sprockets-image_compressor'
-
 gem 'simple_form'
 gem 'devise', '~> 3.5.1'
 gem 'activeadmin', github: 'activeadmin'
