@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   resources :products, only: [:show]
 
   resources :questions, only: [:index]
+
+  resources :comments, only: [:create, :edit, :update, :destroy]
 end

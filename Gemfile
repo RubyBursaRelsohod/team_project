@@ -26,7 +26,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Heroku deployment gem
 group :production do
   gem 'rails_12factor'
-  gem 'heroku_rails_deflate'
 end
 
 gem 'sprockets-image_compressor'
@@ -40,6 +39,7 @@ gem 'quiet_assets', group: :development
 gem 'annotate', '~> 2.6.6'
 gem 'rateaux'
 gem 'translit'
+gem 'auto_html'
 
 gem 'react-rails'
 gem 'sprockets', '>= 3.0.0'
