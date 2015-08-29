@@ -12,7 +12,6 @@ class DevStatus extends React.Component {
   }
 
   getIssues(p_url, p_data, cbSuccess) {
-    console.log('getIssues');
     let request = $.ajax({
       url: p_url,
       method: "GET",
@@ -28,7 +27,17 @@ class DevStatus extends React.Component {
   }
 
   onBackendResponse(data) {
-    let issues = data;
+    let jsonExcluder = (key, value) => {
+      if (key == 'pull_request' || key == 'user' ||
+          key == 'labels' || key == 'assignee' ||
+          key == 'milestone' || key == 'comments')
+        return undefined;
+      else return value;
+    };
+
+    let reducedIssuesStr = JSON.stringify(data, jsonExcluder);
+    let issues = JSON.parse(reducedIssuesStr);
+
     let closed = this.getClosedIssues(issues);;
     let open = this.getOpenedIssues(issues);
     localStorage.clear();
