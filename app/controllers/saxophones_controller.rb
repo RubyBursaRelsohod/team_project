@@ -3,7 +3,7 @@ class SaxophonesController < ApplicationController
     @saxophones = Product.every(:Saxophone)
                   .order('id')
                   .page(params[:page])
-                  .per(10)
+                  .per(12)
 
     respond_to do |format|
       format.html

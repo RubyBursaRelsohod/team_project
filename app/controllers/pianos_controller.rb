@@ -3,7 +3,7 @@ class PianosController < ApplicationController
     @pianos = Product.every(:Piano)
               .order('id')
               .page(params[:page])
-              .per(10)
+              .per(12)
 
     respond_to do |format|
       format.html
