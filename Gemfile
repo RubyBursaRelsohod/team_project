@@ -26,7 +26,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Heroku deployment gem
 group :production do
   gem 'rails_12factor'
-  gem 'heroku-deflater'
 end
 
 gem 'sprockets-image_compressor'

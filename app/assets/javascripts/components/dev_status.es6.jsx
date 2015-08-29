@@ -22,7 +22,7 @@ class DevStatus extends React.Component {
   }
 
   componentWillMount() {
-    let url = 'https://api.github.com/repos/RubyBursaRelsohod/team_project/issues?state=all&filter=all';
+    let url = 'https://api.github.com/repos/RubyBursaRelsohod/team_project/issues?state=all&filter=all&since=2015-08-01T07:00:00Z';
     this.getIssues(url, {issues: 'open'}, this.onBackendResponse.bind(this));
   }
 
