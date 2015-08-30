@@ -23,11 +23,11 @@ class CommentsController < ApplicationController
     @comment = @product.comments.find(params[:id])
     respond_to do |format|
       if @comment.update_attributes(comment_params)
-        format.html do
-          redirect_to [@comment.product, @comment], notice: 'Comment Updated!'
-        end
+        format.html { redirect_to @comment.product, notice: 'Comment Updated!' }
       else
-        format.html { render action: 'edit', notice: 'Something went wrong...' }
+        format.html do
+          redirect_to @comment.product, notice: 'Something went wrong...'
+        end
       end
     end
   end
