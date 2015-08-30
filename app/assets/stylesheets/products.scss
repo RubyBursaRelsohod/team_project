@@ -57,6 +57,11 @@
     }
 }
 
+.list-group-image {
+    width: 400px !important;
+    height: 250px !important;
+}
+
 .container.product-info p {
     text-indent: 50px !important;
 }
@@ -74,7 +79,7 @@
     .product {
         height: 321px;
 
-        border: 1px solid #ddd;
+        // border: 1px solid #ddd;
     }
     .product > img {
         max-width: 230px;
@@ -85,10 +90,11 @@
         margin-bottom: 25px;
     }
     .product-title {
-        font-size: 20px;
+        font-size: 2em;
     }
     .product-desc {
         font-size: 14px;
+        line-height: 1.7 !important;
     }
     .product-price {
         font-size: 22px;
@@ -102,6 +108,20 @@
     }
     .product-info {
         margin-top: 50px;
+    }
+
+    .product-preview {
+        margin-top: 10% !important;
+        margin-left: 10% !important;
+        margin-right: -200px !important;
+        width: 120% !important;
+        cursor: pointer !important;
+    }
+
+    .carousel-inner {
+        div > img {
+            height: 100% !important;
+        }
     }
     /*********************************************
                         VIEW
@@ -155,9 +175,9 @@
         height: 107px;
         padding-right: 20px;
 
-        border-top: 1px solid #ddd;
-        border-right: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
+        // border-top: 1px solid #ddd;
+        // border-right: 1px solid #ddd;
+        // border-bottom: 1px solid #ddd;
     }
     .service1-item > img {
         max-width: 110px;
@@ -176,14 +196,15 @@
         opacity: 1;
     }
     .service-image-left {
-        padding-right: 50px;
+        padding-right: 50px !important;
     }
     .service-image-right {
-        padding-left: 50px;
+        padding-left: 50px !important;
     }
     .service-image-left > center > img,
     .service-image-right > center > img {
-        max-height: 155px;
+        // max-height: 155px;
+        height: 100% !important;
     }
 }
 
@@ -335,3 +356,14 @@
         }
     }
 }
+
+// .carousel{
+//     background: #2f4357;
+//     margin-top: 20px;
+// }
+// .carousel .item img{
+//     margin: 0 auto; /* Align slide image horizontally center */
+// }
+// .bs-example{
+//     margin: 20px;
+// }

@@ -1,7 +1,8 @@
 <div class="item col-xs-4 col-lg-4">
 	<div class="thumbnail">
 	<%= link_to product_path(product) do %>
-		<img class="group list-group-image" src="http://placehold.it/400x250/00/fff" alt="" />
+<!-- 		<img class="group list-group-image" src="http://placehold.it/400x250/00/fff" alt="" /> -->
+		<img class="group list-group-image" src="<%= get_img_src_for product %>" alt="" />
 		<div class="caption">
 			<h4 class="group inner list-group-item-heading">
 				<%= product.name %>
