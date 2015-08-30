@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   end
 
   resources :questions, only: [:index]
+
+  resources :cart, only: [:index]
 end
