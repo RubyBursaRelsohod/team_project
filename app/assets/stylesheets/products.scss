@@ -326,3 +326,17 @@
         max-height: 40px !important;
     }
 }
+
+.edit-comment-controls {
+    .control-links {
+        .glyphicon {
+            text-decoration: none !important;
+            top: 0 !important;
+
+            &.glyphicon-pencil {
+                display: none !important;
+                visibility: hidden !important;
+            }
+        }
+    }
+}

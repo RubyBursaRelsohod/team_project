@@ -79,8 +79,10 @@
                     </div>
                     <div class="tab-pane fade" id="service-three">
                         <!-- ==== COMMENTS ==== -->
+                        <% if user_signed_in? %>
                         <br>
-
+                        <%= render 'form' %>
+                        <% end %>
                         <br>
                         <% if @comments.size > 0 %>
                             <div class="container"><br>
