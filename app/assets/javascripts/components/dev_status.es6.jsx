@@ -11,6 +11,10 @@ class DevStatus extends React.Component {
     this.OPEN_ISSUE_INPT_ID = 'open_issue_inpt';
   }
 
+  noSpanRender(text) {
+    return { __html: `<input type='radio' name='options' autoComplete='off'/>${text}` };
+  }
+
   getIssues(p_url, p_data, cbSuccess) {
     let request = $.ajax({
       url: p_url,
@@ -95,21 +99,13 @@ class DevStatus extends React.Component {
 
             <label className="btn btn-primary active"
                    onClick={this.onChangeRadioButton.bind(this)}
-                   id={this.CLOSED_ISSUE_ID}>
-              <input type="radio" name="options"
-                     autoComplete="off"
-                     id={this.CLOSED_ISSUE_INPT_ID}
-                     onChange={this.onInputChange.bind(this)} /> Closed Issues
-            </label>
+                   id={this.CLOSED_ISSUE_ID}
+                   dangerouslySetInnerHTML={this.noSpanRender('Closed Issues')} />
 
             <label className="btn btn-primary"
                    onClick={this.onChangeRadioButton.bind(this)}
-                   id={this.OPEN_ISSUE_ID}>
-              <input type="radio" name="options"
-                     autoComplete="off"
-                     id={this.OPENED_ISSUE_INPT_ID}
-                     onChange={this.onInputChange.bind(this)} /> Open Issues
-            </label>
+                   id={this.OPEN_ISSUE_ID}
+                   dangerouslySetInnerHTML={this.noSpanRender('Open Issues')} />
 
           </div>
           <IssuesList issues={this.state.issues} />
