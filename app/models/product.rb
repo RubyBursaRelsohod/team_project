@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
   has_one :guitar
   has_one :saxophone
   has_one :piano
-  has_many :comments
+  has_many :comments, dependent: :destroy
   belongs_to :products_category
   has_many :orders_products
   has_many :products_photos

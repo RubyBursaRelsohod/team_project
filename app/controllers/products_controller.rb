@@ -12,5 +12,7 @@ class ProductsController < ApplicationController
     when 'Piano'
       @product = [product, Piano.where(product: product).first, photos]
     end
+    @comment = Comment.new
+    @comments = Comment.where(product_id: product.id).order('created_at DESC')
   end
 end

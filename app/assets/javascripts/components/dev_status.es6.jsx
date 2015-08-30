@@ -12,7 +12,6 @@ class DevStatus extends React.Component {
   }
 
   getIssues(p_url, p_data, cbSuccess) {
-    console.log('getIssues');
     let request = $.ajax({
       url: p_url,
       method: "GET",
@@ -23,12 +22,22 @@ class DevStatus extends React.Component {
   }
 
   componentWillMount() {
-    let url = 'https://api.github.com/repos/RubyBursaRelsohod/team_project/issues?state=all&filter=all';
+    let url = 'https://api.github.com/repos/RubyBursaRelsohod/team_project/issues?state=all&filter=all&since=2015-08-01T07:00:00Z';
     this.getIssues(url, {issues: 'open'}, this.onBackendResponse.bind(this));
   }
 
   onBackendResponse(data) {
-    let issues = data;
+    let jsonExcluder = (key, value) => {
+      if (key == 'pull_request' || key == 'user' ||
+          key == 'labels' || key == 'assignee' ||
+          key == 'milestone' || key == 'comments')
+        return undefined;
+      else return value;
+    };
+
+    let reducedIssuesStr = JSON.stringify(data, jsonExcluder);
+    let issues = JSON.parse(reducedIssuesStr);
+
     let closed = this.getClosedIssues(issues);;
     let open = this.getOpenedIssues(issues);
     localStorage.clear();
@@ -42,7 +51,7 @@ class DevStatus extends React.Component {
   }
 
   onChangeRadioButton(e) {
-    switch(e.target.id) {
+    switch(e.currentTarget.id) {
       case this.OPEN_ISSUE_ID:
         this.setState({ issues: JSON.parse(localStorage.open_issues) });
         break;
@@ -53,7 +62,7 @@ class DevStatus extends React.Component {
   }
 
   onInputChange(e) {
-    switch(e.target.id) {
+    switch(e.currentTarget.id) {
       case this.OPEN_ISSUE_INPT_ID:
         this.setState({ issues: JSON.parse(localStorage.open_issues) });
         break;

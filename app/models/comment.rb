@@ -14,10 +14,17 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :product
 
+  auto_html_for :body do
+    html_escape
+    image(width: 400, height: 250)
+    youtube(width: 400, height: 250, autoplay: false)
+    link target: '_blank', rel: 'nofollow'
+    simple_format
+  end
+
   validates :body, presence: true, length: { maximum: 5000 }
   validates :user_id, :product_id, presence: true, numericality:
             { greater_than: 0, only_integer: true }
-  # validates_associated :user, :product
 
   # Method for displaying comment's id, user's full
   # name and product name in AdminPanel. ActiveAdmin

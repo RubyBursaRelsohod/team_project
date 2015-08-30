@@ -1,0 +1,40 @@
+<div class="message-item" id="m<%= comment.id %>">
+    <div class="message-inner">
+        <div class="message-head clearfix">
+            <div class="avatar pull-left">
+                <%= link_to product_path(@product) do %>
+                    <%= gravatar_tag comment.user.email, size: 40 %>
+                <% end %>
+            </div>
+            <div class="user-detail">
+                <h5 class="handle"><%= comment.user.full_name %></h5>
+                <div class="post-meta">
+                    <div class="asker-meta">
+                        <span class="qa-message-what"></span>
+                        <span class="qa-message-when">
+                            <span class="qa-message-when-data">
+                                <%= time_ago_in_words(comment.created_at) %> ago
+                            </span>
+                        </span>
+                        <span class="qa-message-who">
+                            <span class="qa-message-who-pad">by </span>
+                            <span class="qa-message-who-data">
+                                <%= link_to comment.user.full_name, product_path(@product) %>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="pull-right edit-comment-controls">
+                    <%= link_to edit_product_comment_path(comment.product, comment), class: 'control-links' do %>
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    <% end %>
+                    <%= link_to [comment.product, comment], method: :delete do %>
+                        <span class="glyphicon glyphicon-remove"></span>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="qa-message-content">
+            <%= raw(comment.body_html) %>
+        </div>
+</div></div>

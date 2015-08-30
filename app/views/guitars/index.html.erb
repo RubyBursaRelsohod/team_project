@@ -1,24 +1,16 @@
 <div class="products-namespace">
-    <div id="paginator">
+	<h2 class="page-header text-center">Guitars</h2>
+    <div id="paginator" class="text-center">
         <%= paginate @guitars, remote: true %>
     </div>
-    <div class="well well-sm">
-        <strong>Category Title</strong>
-        <div class="btn-group">
-            <a href="" id="list" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-th-list"></span>
-                List
-            </a>
-            <a href="" id="grid" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-th"></span>
-                Grid
-            </a
-        ></div>
-    </div>
-
     <div id="products" class="row list-group">
             <%= render partial: 'products/product',
                        collection: @guitars,
                        as: :product %>
     </div>
+    <br>
+    <div id="paginator" class="text-center">
+        <%= paginate @guitars, remote: true %>
+    </div>
+    <br>
 </div>
