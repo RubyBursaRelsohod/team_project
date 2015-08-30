@@ -24,6 +24,14 @@
                         </span>
                     </div>
                 </div>
+                <div class="pull-right edit-comment-controls">
+                    <%= link_to edit_product_comment_path(comment.product, comment), class: 'control-links' do %>
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    <% end %>
+                    <%= link_to [comment.product, comment], method: :delete do %>
+                        <span class="glyphicon glyphicon-remove"></span>
+                    <% end %>
+                </div>
             </div>
         </div>
         <div class="qa-message-content">

@@ -1,48 +1,45 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:edit, :update, :destroy]
-
   def create
-    # @comment = Comment.new(user: current_user, product: params[:id])
-    @comment = Comment.new(comment_params)
-
+    @product = Product.find(params[:product_id])
+    @comment = @product.comments.create(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save
-      respond_to do |format|
-        format.html do
-          redirect_to product_path(@comment.product_id), notice: 'Comment Created!'
-        end
-      end
+      redirect_to @product, notice: 'Comment Created!'
     else
-      redirect_to product_path(@comment.product_id), notice: 'Something went wrong'
+      redirect_to @product, notice: 'Something went wrong...'
     end
   end
 
+  def show
+  end
+
   def edit
+    @product = Product.find(params[:product_id])
+    @comment = @product.comments.find(params[:id])
   end
 
   def update
-    if @comment.update(comment_params)
-      respond_to do |format|
+    @product = Product.find(params[:product_id])
+    @comment = @product.comments.find(params[:id])
+    respond_to do |format|
+      if @comment.update_attributes(comment_params)
         format.html do
-          redirect_to product_path(@comment.product_id), notice: 'Comment Updated'
+          redirect_to [@comment.product, @comment], notice: 'Comment Updated!'
         end
+      else
+        format.html { render action: 'edit', notice: 'Something went wrong...' }
       end
-    else
-      redirect_to comment_path(@comment_id), notice: 'Something went wrong'
     end
   end
 
   def destroy
+    @product = Product.find(params[:product_id])
+    @comment = @product.comments.find(params[:id])
     @comment.destroy!
-    respond_to do
-      redirect_to product_path(@comment.product_id), notice: 'Comment Deleted'
-    end
+    redirect_to @product, notice: 'Comment Deleted!'
   end
 
   private
-
-  def set_comment
-    @comment = Comment.find(params[:id])
-  end
 
   def comment_params
     params.require(:comment).permit(:body)
