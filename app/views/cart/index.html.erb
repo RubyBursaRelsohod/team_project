@@ -1,0 +1,70 @@
+<div class="container shopping-cart">
+	<table id="cart" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:50%">Instrument</th>
+							<th style="width:10%">Price</th>
+							<th style="width:8%">Quantity</th>
+							<th style="width:22%" class="text-center">Subtotal</th>
+							<th style="width:10%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-2 hidden-xs"><a href='/products/800'><img src="http://s3.amazonaws.com/relsohod1/products_photos/photos/000/000/010/medium/violin-test.jpg?1440957118" alt="..." class="img-responsive item-img-cart"/></a></div>
+									<div class="col-sm-10">
+										<h4 class="nomargin">Violin 0</h4>
+										<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+									</div>
+								</div>
+							</td>
+							<td data-th="Price">₴ 49000.00</td>
+							<td data-th="Quantity">
+								<input type="number" class="form-control text-center" value="2">
+							</td>
+							<td data-th="Subtotal" class="text-center">₴ 96000.00</td>
+							<td class="actions" data-th="">
+								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+							</td>
+						</tr>
+						<tr>
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-2 hidden-xs"><a href='/products/831'><img src="http://www.rettigmusic.com/store/media/altosaxParis.jpg" alt="..." class="img-responsive"/></a></div>
+									<div class="col-sm-10">
+										<h4 class="nomargin">Saxophone 31</h4>
+										<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+									</div>
+								</div>
+							</td>
+							<td data-th="Price">₴ 98000.00</td>
+							<td data-th="Quantity">
+								<input type="number" class="form-control text-center" value="1">
+							</td>
+							<td data-th="Subtotal" class="text-center">₴ 98000.00</td>
+							<td class="actions" data-th="">
+								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr class="visible-xs">
+							<td class="text-center"><strong>Total ₴ 194000.00</strong></td>
+						</tr>
+						<tr>
+							<td>
+								<%= link_to root_path, class: 'btn btn-warning' do %>
+									<i class="fa fa-angle-left"></i> Continue Shopping
+								<% end %>
+							</td>
+							<td colspan="2" class="hidden-xs"></td>
+							<td class="hidden-xs text-center"><strong>Total ₴ 194000.00</strong></td>
+							<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+						</tr>
+					</tfoot>
+				</table>
+</div>
