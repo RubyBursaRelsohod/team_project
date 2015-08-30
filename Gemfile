@@ -45,8 +45,8 @@ gem 'sprockets-es6'
 
 gem 'kaminari'
 gem 'declarative_authorization', github: 'stffn/declarative_authorization'
-gem 'paperclip', '~> 4.3'
 gem 'aws-sdk', '~> 1.6'
+gem 'paperclip', '~> 4.3'
 
 gem 'table_print'
 gem 'country_select', github: 'stefanpenner/country_select'
