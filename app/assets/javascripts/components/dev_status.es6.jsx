@@ -11,10 +11,6 @@ class DevStatus extends React.Component {
     this.OPEN_ISSUE_INPT_ID = 'open_issue_inpt';
   }
 
-  noSpanRender(text) {
-    return { __html: `<input type='radio' name='options' autoComplete='off'/>${text}` };
-  }
-
   getIssues(p_url, p_data, cbSuccess) {
     let request = $.ajax({
       url: p_url,
@@ -55,7 +51,7 @@ class DevStatus extends React.Component {
   }
 
   onChangeRadioButton(e) {
-    switch(e.target.id) {
+    switch(e.currentTarget.id) {
       case this.OPEN_ISSUE_ID:
         this.setState({ issues: JSON.parse(localStorage.open_issues) });
         break;
@@ -66,7 +62,7 @@ class DevStatus extends React.Component {
   }
 
   onInputChange(e) {
-    switch(e.target.id) {
+    switch(e.currentTarget.id) {
       case this.OPEN_ISSUE_INPT_ID:
         this.setState({ issues: JSON.parse(localStorage.open_issues) });
         break;
@@ -99,13 +95,21 @@ class DevStatus extends React.Component {
 
             <label className="btn btn-primary active"
                    onClick={this.onChangeRadioButton.bind(this)}
-                   id={this.CLOSED_ISSUE_ID}
-                   dangerouslySetInnerHTML={this.noSpanRender('Closed Issues')} />
+                   id={this.CLOSED_ISSUE_ID}>
+              <input type="radio" name="options"
+                     autoComplete="off"
+                     id={this.CLOSED_ISSUE_INPT_ID}
+                     onChange={this.onInputChange.bind(this)} /> Closed Issues
+            </label>
 
             <label className="btn btn-primary"
                    onClick={this.onChangeRadioButton.bind(this)}
-                   id={this.OPEN_ISSUE_ID}
-                   dangerouslySetInnerHTML={this.noSpanRender('Open Issues')} />
+                   id={this.OPEN_ISSUE_ID}>
+              <input type="radio" name="options"
+                     autoComplete="off"
+                     id={this.OPENED_ISSUE_INPT_ID}
+                     onChange={this.onInputChange.bind(this)} /> Open Issues
+            </label>
 
           </div>
           <IssuesList issues={this.state.issues} />
