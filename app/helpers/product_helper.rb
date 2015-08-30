@@ -15,7 +15,7 @@ module ProductHelper
   end
 
   def get_img_src_for(product)
-    image = ProductsPhoto.find_by(product_id: product.id)
+    image = ProductsPhoto.where(product_id: product.id).last
     if image
       image.photo.url(:original)
     else
