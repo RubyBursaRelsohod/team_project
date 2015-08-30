@@ -3,31 +3,44 @@
     <div class="content-wrapper">
         <div class="item-container">
             <div class="container">
-                <div class="col-md-12">
-                    <div class="product col-md-3 service-image-left">
+                <div class="col-md-6">
+                    <div class="product-preview">
+                        <img src="<%= if @product[2].first then @product[2].first.photo.url(:original) else 'http://placehold.it/350x150' end %>" alt="" data-toggle="modal" data-target="#myModal" />
 
-                        <center>
-                            <img id="item-display" src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-                        </center>
-                    </div>
-
-                    <div class="container service1-items col-sm-2 col-md-2 pull-left">
-                        <center>
-                            <a id="item-1" class="service1-item">
-                                <img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-                            </a>
-                            <a id="item-2" class="service1-item">
-                                <img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-                            </a>
-                            <a id="item-3" class="service1-item">
-                                <img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-                            </a>
-                        </center>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">All "<%= @product[0].name %>" images</h4>
+      </div>
+      <div class="modal-body">
+        <section class="main">
+          <div class="container grid-custom">
+            <div class="row">
+              <% if @product[2].first.present? %>
+                  <% @product[2].each do |product| %>
+                      <div class="col-sm-6 col-xs-12 first-block">
+                        <img src="<%= product.photo.url(:original) %>" alt="" class="img-responsive">
+                      </div>
+                  <% end %>
+              <% end %>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> <!-- end Modal -->
                     </div>
                 </div>
 
-                <div class="col-md-7 genera-product-data">
-                    <div class="product-title"><%= @product[0].name %></div>
+                <div class="col-md-6 general-product-data">
+                    <h1 class="product-title page-header"><%= @product[0].name %></h1>
                     <div class="product-desc"><%= shorten(@product[0], 300) %></div>
                     <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
                     <hr>

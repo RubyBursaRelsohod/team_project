@@ -13,4 +13,13 @@ module ProductHelper
     end
     html_str.html_safe
   end
+
+  def get_img_src_for(product)
+    image = ProductsPhoto.find_by(product_id: product.id)
+    if image
+      image.photo.url(:original)
+    else
+      'http://placehold.it/400x250/e74c3c/fff'
+    end
+  end
 end
