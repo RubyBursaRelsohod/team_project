@@ -41,7 +41,11 @@
 
                 <div class="col-md-6 general-product-data">
                     <h1 class="product-title page-header"><%= @product[0].name %></h1>
-                    <div class="product-desc"><%= shorten(@product[0], 300) %></div>
+                    <div class="product-desc"><%= shorten(@product[0], 300) %>
+                    <% if @product[3].first.present? %>
+                    <br/> <%= audio_tag(@product[3].first.sound.url.split('?')[0], autoplay: false, controls: true)%>
+                    <% end %>
+                    </div>
                     <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
                     <hr>
                     <div class="product-price"><%= to_price(@product[0]) %></div>
