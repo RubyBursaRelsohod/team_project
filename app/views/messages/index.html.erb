@@ -17,28 +17,38 @@
                     <%= f.input :body, as: :text, input_html: { id: 'url', class: 'form-control send-message', rows: '3' }, placeholder: 'Message', label: false %>
                 </div>
 
+
+        <div class="container col-centered">
+        <% recipients_new = @recipients_new.in_groups(4, false) %>
+
+        <% recipients_new.each do |r| %>
+            <ul style="list-style-type: none;" class="list-unstyled row">
+                <% r.each_with_index do |user, index| %>
+                    <label for="user<%= user.id %>">
+                        <li class="list-group-item pull-left">
+                            <span>
+                                <%= user.email %>
+                                <%= check_box_tag 'message[user_tokens][]', user.id, (index == 0 && user.admin?) ? true : @message.users.include?(user), id: "user#{user.id}" %>
+                            </span>
+                        </li>
+                    </label>
+                    <br>
+                <% end %>
+            </ul>
+        <% end %>
+
+        </div>
+
                 <div class="btn-panel">
-                    <%= f.button :submit, class: 'col-lg-10 text-right btn send-message-btn pull-right btn-block', role: 'button' do %>
+                    <%= f.button :submit, 'Send Message', class: 'col-lg-10 text-right btn send-message-btn pull-right btn-block', role: 'button' do %>
                         <span class="glyphicon glyphicon-send"> </span> Send Message
                     <% end %>
                 </div>
-            <% end %>
+
 
         <br><br>
-
-        <ul style="list-style-type: none;" class="pull-left">
-            <% @recipients_new.each_with_index do |user, index| %>
-                <label for="user<%= user.id %>">
-                    <li>
-                        <span class="list-group-item">
-                            <%= user.email %>
-                            <%= check_box_tag 'message[user_tokens][]', user.id, (index == 0 && user.admin?) ? true : @message.users.include?(user), id: "user#{user.id}" %>
-                        </span>
-                    </li>
-                </label>
-                <br>
-            <% end %>
-        </ul>
+        <% end %>
         </div>
+
     </div>
 </div>
