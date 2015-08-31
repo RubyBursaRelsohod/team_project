@@ -1,0 +1,11 @@
+<div class="media msg ">
+    <% m = locals[:m]; user = User.find(m.sender_id) %>
+    <%= link_to messages_path, class: 'pull-left' do %>
+        <%= gravatar_tag user.email, size: 32, html: { class: 'media-object', style: 'width: 32px; height: 32px;', alt: 'avatar' } %>
+    <% end %>
+    <div class="media-body">
+        <small class="pull-right time"><i class="fa fa-clock-o"></i> <%= time_ago_in_words(m.created_at) %> ago</small>
+        <h5 class="media-heading"><%= current_user.id == m.sender_id ? (user.full_name + ', me') : ('Support: ' + user.full_name) %></h5>
+        <p class="col-lg-10"><%= m.body %></p>
+    </div>
+</div>

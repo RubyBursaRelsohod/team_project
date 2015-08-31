@@ -1,0 +1,20 @@
+<div class="recipients">
+    <%= simple_form_for :message, url: messages_path do |f| %>
+        <%= f.input :body, as: :text, input_html: { id: 'url', class: 'message-body' }, placeholder: 'Message', label: false %>
+
+        <ul>
+            <% @recipients.each_with_index do |user, index| %>
+                <label for="user<%= user.id %>">
+                    <li>
+                        <span class="list-group-item">
+                            <%= user.email %>
+                            <%= check_box_tag 'message[user_tokens][]', user.id, (index == 0 && user.admin?) ? true : @message.users.include?(user), id: "user#{user.id}" %>
+                        </span>
+                    </li>
+                </label>
+                <br>
+            <% end %>
+        </ul>
+        <%= f.button :submit, 'Send Message',  class: 'btn btn-outline' %>
+    <% end %>
+</div>

@@ -5,4 +5,8 @@ class Message < ActiveRecord::Base
 
   validates :sender_id, presence: true
   validates :body, presence: true
+
+  def user_tokens=(ids)
+    self.user_ids = ids
+  end
 end
