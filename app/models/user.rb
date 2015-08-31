@@ -38,6 +38,7 @@ class User < ActiveRecord::Base
          :confirmable, :lockable
   has_many :comments
   has_many :orders
+  has_many :messages, foreign_key: :sender_id
 
   validates :first_name, :last_name, presence: true, length: { minimum: 2 }
   validates_each :first_name, :last_name do |rec, attr, value|
@@ -54,12 +55,20 @@ class User < ActiveRecord::Base
   validates :phone, presence: true
   validates :address, presence: true
 
+  scope :admins, -> { where(email: AdminUser.pluck(:email)) }
+
   # Method for displaying user's first_name
   # and last_name in AdminPanel. ActiveAdmin uses
   # the display_name method in models for its
   # drop-down inputs.
   def display_name
     id.to_s + '. ' + full_name
+  end
+
+  # Method for checking if the user
+  # is admin, i.e. is present in AdminUser table
+  def admin?
+    AdminUser.find_by(email: email) ? true : false
   end
 
   def full_name

@@ -26,4 +26,10 @@ Rails.application.routes.draw do
   resources :questions, only: [:index]
 
   resources :cart, only: [:index]
+
+  scope path_names: { new: 'new_message',
+                      create: 'create_message',
+                      index: 'support' } do
+    resources :messages, path: 'support', only: [:index, :new, :create]
+  end
 end

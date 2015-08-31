@@ -96,6 +96,7 @@
     <%- if user_signed_in? %>
 
       <ul class="nav navbar-nav navbar-right">
+        <li class="about-link"><%= link_to 'Support', messages_path %></li>
         <li class="about-link"><%= link_to 'About', about_index_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= gravatar_tag current_user.email, size: 30, secure: true, html: { class: 'small-gravatar'} %>      <%= current_user.full_name %> (₴194000)<span class="glyphicon glyphicon-chevron-down"></span></a>
