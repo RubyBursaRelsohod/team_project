@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826111940) do
+ActiveRecord::Schema.define(version: 20150831075456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,13 @@ ActiveRecord::Schema.define(version: 20150826111940) do
   end
 
   add_index "guitars", ["product_id"], name: "index_guitars_on_product_id", using: :btree
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "order_statuses", force: :cascade do |t|
     t.string   "name"
@@ -166,6 +173,13 @@ ActiveRecord::Schema.define(version: 20150826111940) do
     t.text     "answer"
     t.integer  "user_id"
     t.boolean  "is_faq"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipients", force: :cascade do |t|
+    t.integer  "message_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

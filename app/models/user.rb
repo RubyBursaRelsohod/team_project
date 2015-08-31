@@ -38,6 +38,7 @@ class User < ActiveRecord::Base
          :confirmable, :lockable
   has_many :comments
   has_many :orders
+  has_many :messages, foreign_key: :sender_id
 
   validates :first_name, :last_name, presence: true, length: { minimum: 2 }
   validates_each :first_name, :last_name do |rec, attr, value|

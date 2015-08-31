@@ -45,6 +45,7 @@ RSpec.describe User, type: :model do
     it { should_not allow_value("sMith").for(:last_name) }
     it { should allow_value("JS@example.com").for(:email) }
     it { should_not allow_value("example.com").for(:email) }
+    it { should have_many(:messages) }
   end
   describe "associations" do
     it { should have_many :comments }
